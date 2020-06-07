@@ -3,22 +3,27 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+## 共同開発企画App｜Taskun
+>チームでのタスク管理アプリ
 
-* Ruby version
+※作成後、ここにgifを貼る
 
-* System dependencies
+### 使用言語、FW
 
-* Configuration
+- Ruby
+- Rails（5系）
 
-* Database creation
+## 使用技術（随時更新）
 
-* Database initialization
+- MySQL（5.7）
+- 
 
-* How to run the test suite
+## URL（随時更新）
 
-* Services (job queues, cache servers, search engines, etc.)
+- 
+-
 
-* Deployment instructions
+## 機能一覧（随時更新）
 
-* ...
+- 
+-
