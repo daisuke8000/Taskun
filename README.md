@@ -8,7 +8,7 @@ application up and running.
 
 ※作成後、ここにgifを貼る
 
-### 使用言語、FW
+## 使用言語、FW
 
 - Ruby
 - Rails（5系）
