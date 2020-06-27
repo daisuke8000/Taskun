@@ -13,6 +13,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'carrierwave'
+gem 'bootstrap','~> 4.5.0'
 gem "jquery-rails"
 gem 'font-awesome-sass', '~> 5.4.1'
 gem 'ancestry'
