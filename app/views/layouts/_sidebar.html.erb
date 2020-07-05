@@ -2,10 +2,60 @@
   <nav class="navbar navbar-default">
     <div class="side-menu-container">
       <div class="navbar-header navbar-public">
+        <%= link_to root_path,class: "navbar-brand prosto-one ajax-llink" do %>
+          <div class = "logo-icon-container">
+            <%= image_tag 'top.png' %>
+          <% end %>
     </div>
     <div>
       <ul class="nav navbar-nav">
         <li>
+          <%= link_to root_path,class: "ajax-link" do %>
+            <%= icon('fas','home') %>
+            <span class="title">ダッシュボード</span>
+            <% end %>
+        </li>
+        <li>
+          <%= link_to root_path,class: "ajax-link" do %>
+            <%= icon('fas','plus-circle') %>
+            <span class="title">新しいタスクを発行</span>
+            <% end %>
+        </li>
+        <li>
+          <%= link_to root_path,class: "ajax-link" do %>
+            <%= icon('fas','users') %>
+            <span class="title">メンバーの状況</span>
+            <% end %>
+        </li>
+        <li>
+          <%= link_to root_path,class: "ajax-link" do %>
+            <%= icon('fas','clock') %>
+            <span class="title">最近更新したタスク</span>
+            <% end %>
+        </li>
+        <li>
+          <%= link_to root_path,class: "ajax-link" do %>
+            <%= icon('fas','search') %>
+            <span class="title">タスク検索</span>
+            <% end %>
+        </li>
+        <li>
+          <%= link_to root_path,class: "ajax-link" do %>
+            <%= icon('fas','tasks') %>
+            <span class="title">タスク管理</span>
+            <% end %>
+        </li>
+        <li>
+          <%= link_to root_path,class: "ajax-link" do %>
+            <%= icon('fas','boxes') %>
+            <span class="title">カテゴリー管理</span>
+            <% end %>
+        </li>
+        <li>
+          <%= link_to root_path,class: "ajax-link" do %>
+            <%= icon('fas','file') %>
+            <span class="title">共有文書</span>
+            <% end %>
         </li>
       </ul>
 
