@@ -1,0 +1,30 @@
+<nav class="navbar fixed-top navbar-expand-md navbar-light offcanvas-desktop navbar public">
+  <div class="container gt-main-container">
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <%= link_to root_path,class: "nav-link ajax-link" do %>
+              <%= icon('fas','mail-bulk') %>
+              <span>招待する</span>
+            <% end %>
+        </li>
+        <li class="nav-item dropdown">
+            <%= link_to root_path,class: "nav-link dropdown-toggle" do %>
+              <span class="mr-2">
+                <span>ガイド</span>
+                <%= icon('fas','book-open') %>
+              </span>
+            <% end %>
+        </li>
+        <li class="nav-item dropdown">
+            <%= link_to root_path,class: "nav-link dropdown-toggle" do %>
+              <span class="tip now-user-status">
+                <span></span>
+                <%= icon('fas','sign-in-alt') %>
+              </span>
+            <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
