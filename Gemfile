@@ -19,9 +19,13 @@ gem 'ancestry'
 gem 'ransack'
 gem 'cancancan'
 gem 'rspec-rails'
-gem 'device'
+gem 'devise'
 gem 'haml-rails'
 gem 'bootsnap', '>= 1.1.0', require: false
+#追加分
+gem 'bootstrap', '~> 4.5.0'
+gem 'devise-bootstrap-views'
+gem 'devise-i18n'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
