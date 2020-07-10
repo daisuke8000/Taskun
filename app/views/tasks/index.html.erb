@@ -1,0 +1,171 @@
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<main  class="py-4" id="main-content">
+  <div class="container gt-main-container">
+    <div class="row justify-content-center">
+      <div class="col-md-11 body-frame">
+       <div class="card">
+        <div class="card-header bg-primary text-white fontweight-bold">タスク一覧</div>
+          <div class="card-body">
+            <div class="text-right">
+              <span class="ml-1">リスト表示</span>
+              <a href="#" class="gantt-ajax-link ml-1">ガントチャート</a>
+              <a href="#" class="deadline-ajax-link ml-1">期限表示</a>
+            </div>
+            <div class="alert alert-danger" role="alert" id="thread-alert" style="display: none">
+              "タスクの保有数が上限数(30)を超えると、タスクの新規作成、更新ができなくなります。"
+              <br>
+              "削除してもよいタスクを削除するか、現在利用しているコースをアップグレードして制限を解除しましょう"
+                <div class="mt-3 mb-3 ml-3">
+                  <a href="https://grouptask.biz/stage">コース変更</a>
+                </div>
+            </div>
+            <div class="row mb-1">
+              <div class="col-md-4">カテゴリー</div>
+              <div class="col-md-auto">
+                <select class="ajax-filtter ajax-filter-select" name="project" data-url="https://grouptask.biz/thread">
+                  <option value selected>--</option>
+                  <option value="1076">デフォルトカテゴリー</option>
+                </select>
+              </div>
+            </div>
+            <div class="row mb-1">
+              <div class="col-md-4">期日</div>
+              <div class="col-md-auto">
+                <select class id="IdDueDateStatus">
+                  <option value>--</option>
+                  <option value="<0">期日オーバー</option>
+                  <option value="<=7">期日１週間以内</option>
+                </select>
+              </div>
+            </div>
+            <div class="row mb-1">
+              <div class="col-md-4">ステータス</div>
+              <div class="col-md-auto">
+                <select class="ajax-filtter ajax-filter-select" name="status" data-url="https://grouptask.biz/thread">
+                  <option value="1" selected>進行中</option>
+                  <option value="20">終了</option>
+                  <option value="10">保留</option>
+                </select>
+              </div>
+            </div>
+            <div class="row mb-1">
+              <div class="col-md-4">開始日前のタスクを表示する</div>
+              <div class="col-md-auto">
+                <select class="ajax-filtter ajax-filter-select" name="display_before_start" data-url="https://grouptask.biz/thread">
+                  <option value="1">はい</option>
+                  <option value="0" selected>いいえ</option>
+                </select>  
+              </div>
+            </div>
+            <div class="row mb-1">
+              <div class="col-md-4">詳細を表示する</div>
+              <div class="col-md-auto">
+                <select class="ajax-filtter ajax-filter-select" name="display_detailed" data-url="https://grouptask.biz/thread">
+                  <option value="1">はい</option>
+                  <option value="0" selected>いいえ</option>
+                </select>
+              </div>
+            </div>  
+
+
+            <div class="table-responsive mt-3">
+              <table class="table table-bordered bg-light">
+                <thead class="bg-primary">
+                  <tr>
+                    <th>
+                      <a href="https://grouptask.biz/thread?field=title&sort=desc" class="ajax-link text-light">タスク名</a>
+                    </th>
+                    <th>
+                      <a href="https://grouptask.biz/thread?field=users.name&sort=desc" class="ajax-link text-light">担当者</a>
+                    </th>
+                    <th>
+                      <a href="https://grouptask.biz/thread?field=due_date&sort=desc" class="ajax-link text-light">期日</a>
+                      <i class="fa fa-fw fa-angle-down text-light"></i>
+                    </th>
+                    <th class="text-light">処理</th>
+                  </tr> 
+                </thead>
+              
+                <tbody>
+                <tr>
+                  <td>
+                    <input type="text" value name="title" data-url="https://grouptask.biz/thread?" class="w-100 ajax-filter ajax-filter-input">
+                  </td>
+                  <td>
+                    <select class="w-100 ajax-filter ajax-filter-select" name="to_user_id" data-url="https://grouptask.biz/thread" >
+                      <option value selected>--</option>
+                      <option value="#"></option>
+                    </select>  
+                  </td>
+                  <td>
+                    <input type="text" value name="due_date" data-url="https://grouptask.biz/thread"class="w-100 ajax-filter ajax-filter-input" id="IdDueDate" >
+                  </td>
+                  <td> </td>  
+                </tr>
+                <tr>
+                  <td>
+                    <div class="td-border-div mytask-priority-5">
+                      <a href="#"></a>
+                      <div class="sub-project-name">デフォルトカテゴリー</div>
+                    </div>
+                  </td>
+                  <td>
+                    <img src="#" class="plofile-icon ml-1 mr-1">
+                    <span class="plofile-name-cover">sample name</span>
+                  </td>
+                  <td>
+                    "test"
+                    <div class="sub-project-name">test</div>
+                  </td>
+                  <td class="text-nowrap">  
+                    <a href="#" class="btn btn-primary ajax-link tip-right" date-title="登録情報の更新">
+                    <i class="fa fa-fw fa-edit"></i>
+                    </a>
+                    <button type="button" class="btn btn-danger tip" data-toggle="modal" data-target="#modal-delete-thread-4640" data-title="削除">
+                      <i class="fa fa-fw fa-trash"></i>
+                    </button>
+                    <div class="modal fade" id="modal-delete-thread-4640" tabeindex="-1" role="dialog" aria-labelledby="modal-delete-thread-4640-label" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title"id="modal-delete-thread-4640-label">削除の確認</h5>
+                            <button type="button" class="close"data-dismiss="modal" aria-label="close">
+                            <span aria-hidden="true">×</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <p>削除してよいですか？</p>
+                            <p>
+                              <strong>テスト</strong>
+                            </p>  
+                          </div>
+                          <div class="modal-fotter">
+                            <button type="button" class="btn btn-secondary"data-dismiss="modal">
+                            キャンセル
+                            </button>
+                            <form action="https://grouptask.biz/thread/4642" method="post" class="ajax-delete-form" id=modal-deleate-thread-4642>
+                            <input type="hidden" name="_token" value="#">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn btn-danger modal-delete-button" data-target="#modal-delete-thread-4642">削除</button>
+                            </form>  
+                          </div>  
+                        </div>
+                      </div>
+                   </div>  
+                    <a href="#" class="btn btn-primary ajax-link tip-right" data-title="記録">記録</a>
+                  </td> 
+                </tr>  
+
+                </tbody>
+              </table>  
+            </div>
+         </div>
+        </div>
+      </div>
+    </div>    
+
+
+
+
+  </div>
+</main>
