@@ -1,4 +1,9 @@
-
-// Custom bootstrap variables must be set or imported *before* bootstrap.
-
 @import "bootstrap";
+
+// login-view
+
+.container-login {
+  @extend .container-fluid;
+  max-width: 576px;
+  padding: 2rem;
+}
