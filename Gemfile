@@ -5,7 +5,7 @@ ruby '2.6.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.2.4.2'
-gem 'mysql2', '>= 0.4.4', '< 0.6.0'
+gem 'mysql2', '>= 0.4.4', '<0.6.0'
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap'
@@ -20,9 +20,13 @@ gem 'ancestry'
 gem 'ransack'
 gem 'cancancan'
 gem 'rspec-rails'
-gem 'device'
+gem 'devise'
 gem 'haml-rails'
 gem 'bootsnap', '>= 1.1.0', require: false
+#追加分
+gem 'bootstrap', '~> 4.5.0'
+gem 'devise-bootstrap-views'
+gem 'devise-i18n'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
