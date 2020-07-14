@@ -2,7 +2,72 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.card-top{
-  background-color: #3490DC;
-  color: white;
+.container {
+  max-width: 100%!important;
+}
+
+.app-container {
+  min-height: 100%;
+  position: relative;
+  background-color: #f9f9f9;
+}
+
+.content-container {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+
+#main-content {
+  margin-top: 60px;
+  width: 100%;
+}
+
+#paste {
+  max-height: 70vh;
+  overflow: scroll;
+  padding: 5px;
+}
+
+.paste-message {
+  min-height: 100px;
+}
+
+.icon-button {
+  padding: 6px;
+  border-radius: 5px;
+}
+
+.flatpickr-input {
+    background-color: #e9ecef!important;
+    cursor: pointer;
+}
+
+.check-list-item {
+  display: flex;
+}
+
+.check-list-delete {
+  width: 40px;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  i {
+    line-height: 2;
+  }
+}
+
+.check-list-input-div {
+  width: calc(100% - 40px);
+  display: inline-block;
+}
+
+.check-list-add {
+  width: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #3490dc!important;
 }
