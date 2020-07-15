@@ -1,0 +1,20 @@
+<h1>#UserPage</h1>
+<h4>※登録、ログイン後の画面遷移確認用ページ</h4>
+<hr>
+<% @users.each do |user| %>
+  <table class="table table-borderless">
+    <tbody>
+    <tr>
+      <td>
+        <p>名前 : <%= user.name %></p>
+        <p>メールアドレス : <%= user.email %></p>
+
+      </td>
+      <td align="right">
+        <%= link_to "削除", user_path(user), method: :delete, data: {confirm: "削除しますか？"} %>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <hr>
+<% end %>
