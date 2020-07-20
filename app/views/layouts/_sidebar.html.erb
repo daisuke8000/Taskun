@@ -1,11 +1,14 @@
 <div class="side-menu">
   <nav class="navbar navbar-default">
     <div class="side-menu-container">
-      <div class="navbar-header navbar-public">
-        <%= link_to root_path,class: "navbar-brand prosto-one ajax-llink" do %>
+      <div class="side-menu__header side-menu__public">
+        <%= link_to root_path,class: "navbar-brand prosto-one home-ajax-link side-menu__brand" do %>
           <div class = "logo-icon-container">
-            <%= image_tag 'top.png' %>
-          <% end %>
+            <%= image_tag 'top.png',class: "brand-image" %>
+          </div>
+          Taskun
+        <% end %>
+      </div>
     </div>
     <div>
       <ul class="nav navbar-nav">
@@ -58,5 +61,6 @@
             <% end %>
         </li>
       </ul>
-
+    </div>
   </nav>
+</div>

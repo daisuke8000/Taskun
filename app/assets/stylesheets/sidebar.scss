@@ -1,4 +1,45 @@
-.logo-icon-container img{
+.side-menu{
+  box-shadow:1px 1px 2px rgba(0,0,0,0.08);
+  overflow-y: auto;
+  z-index: 9999;
+  position: fixed;
+  width: 60px;
+  height:100%;
+  background: linear-gradient(45deg,#353d47,#21292e);
+  overflow-x: hidden;
+  transition: width .5s cubic-bezier(0.19,2,0.22,1);
+}
+.navbar-default{
+  border: none;
+  padding-top: 0;
+  padding-left: 0;
+}
+.side-menu__header{
+  width: 100%;
+  background-color: #fff;
+}
+.side-menu__public{
+  height:60px;
+}
+.side-menu__brand{
+  color: #000;
+  line-height: 60px;
+  height: 50px;
+  padding:0;
+  width: 250px;
+  overflow: hidden;
+}
+.logo-icon-container{
   width:60px;
   height:60px;
+  display: inline-block;
+  text-align: center;
+  background-color: #fff;
+}
+.brand-image{
+  max-width:50%;
+  max-height:50%;
+  position: relative;
+  top:-1px;
+  display: inline-block;
 }
