@@ -6,13 +6,13 @@
   max-width: 100%!important;
 }
 
-.app-container {
+.tasks-new_app-container {
   min-height: 100%;
   position: relative;
   background-color: #f9f9f9;
 }
 
-.content-container {
+.tasks-new_content-container {
   margin-right: 0;
   margin-left: 0;
 }
@@ -29,25 +29,25 @@
   padding: 5px;
 }
 
-.paste-message {
+.tasks-new_paste-message {
   min-height: 100px;
 }
 
-.icon-button {
+.tasks-new_icon-button {
   padding: 6px;
   border-radius: 5px;
 }
 
-.flatpickr-input {
+.tasks-new_flatpickr-input {
     background-color: #e9ecef!important;
     cursor: pointer;
 }
 
-.check-list-item {
+.tasks-new_check-list-item {
   display: flex;
 }
 
-.check-list-delete {
+.tasks-new_check-list-delete {
   width: 40px;
   display: inline-block;
   text-align: center;
@@ -57,12 +57,12 @@
   }
 }
 
-.check-list-input-div {
+.tasks-new_check-list-input-div {
   width: calc(100% - 40px);
   display: inline-block;
 }
 
-.check-list-add {
+.tasks-new_check-list-add {
   width: 40px;
   text-align: center;
   cursor: pointer;

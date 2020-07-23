@@ -1,5 +1,5 @@
-<div class="app-container">
-  <div class="row content-container">
+<div class="tasks-new_app-container">
+  <div class="row tasks-new_content-container">
     <main class="py-4" id="main-content">
       <div class="container gt-main-container">
         <div class="row justify-content-center">
@@ -35,27 +35,27 @@
             <span class="badge badge-danger">必須</span>
             [<a href="#">タスク名の記入内容をコピー</a>]<br  />
             <div class="border mb-2">
-              <%= f.text_area :message, id: "paste", class: 'form-control paste-message pastable pastable-focus' %>
+              <%= f.text_area :message, id: "paste", class: 'form-control tasks-new_paste-message pastable pastable-focus' %>
             </div>
           </div>
 
           <div class="icon-button-group">
-            <%= f.label :image, for: "upload-image", class: "icon-button tip", title: "画像を挿入" do %>
+            <%= f.label :image, for: "upload-image", class: "tasks-new_icon-button tip", title: "画像を挿入" do %>
             <i class="fa fa-fw fa-image"></i>
             <%= f.file_field :image, id: "upload-image", style: "display: none;" %>
             <% end %>
 
-            <%= f.label :image, for: "file-input", class: "icon-button tip", title: "ファイルを添付" do %>
+            <%= f.label :image, for: "file-input", class: "tasks-new_icon-button tip", title: "ファイルを添付" do %>
             <i class="fa fa-fw fa-paperclip"></i>
             <%= f.file_field :image, id: "file-input", style: "display: none;" %>
             <% end %>
 
-            <%= f.label :image, for: "quote", class: "icon-button quote-tags tip", title: "引用" do %>
+            <%= f.label :image, for: "quote", class: "tasks-new_icon-button quote-tags tip", title: "引用" do %>
             <i class="fa fa-fw fa-quote-right"></i>
             <%= f.file_field :image, id: "file-input", style: "display: none;" %>
             <% end %>
 
-            <%= f.label :image, for: "delete_tags", class: "icon-button delete_tags tip", title: "書式をクリア" do %>
+            <%= f.label :image, for: "delete_tags", class: "tasks-new_icon-button delete_tags tip", title: "書式をクリア" do %>
             <i class="fa fa-fw fa-eraser"></i>
             <%= f.file_field :image, id: "file-input", style: "display: none;" %>
             <% end %>
@@ -66,7 +66,7 @@
           <div class="form-group">
             <%= f.label "期日", class: 'control-label' %><br />
             <div class="input-group">
-            <%= f.date_field :end_date, class: 'form-control flatpickr-input' %><br />
+            <%= f.date_field :end_date, class: 'form-control tasks-new_flatpickr-input' %><br />
             <div class="input-group-append flapicker-clear-button">
               <span class="input-group-text">
                 <i class="fa fa-times text-danger"></i>
@@ -77,7 +77,7 @@
 
           <div class="form-group">
             <%= f.label "優先度", class: 'control-label' %><br />
-            <%= f.select :priority, [ ["低い",1], ["普通", 2], ["高い", 3 ] ], {selected: 2}, class: 'form-control' %><br />
+            <%= f.select :priority, [ ["低い",1], ["普通", 2], ["高い", 3 ] ], {selected: 2}, class: 'form-control' %>
           </div>
 
           <div class="form-group">
@@ -95,7 +95,7 @@
           <div class="form-group">
             <%= f.label "開始日", class: 'control-label' %><br />
             <div class="input-group">
-            <%= f.date_field :end_date, class: 'form-control flatpickr-input' %><br />
+            <%= f.date_field :end_date, class: 'form-control tasks-new_flatpickr-input' %><br />
             <div class="input-group-append flapicker-clear-button">
               <span class="input-group-text">
                 <i class="fa fa-times text-danger"></i>
@@ -117,16 +117,16 @@
 
           <%= f.label "チェックリスト", class: 'control-label' %><br />
             <div class="check-lists">
-              <div class="check-list-item mb-1">
-                <div class="check-list-delete">
+              <div class="tasks-new_check-list-item mb-1">
+                <div class="tasks-new_check-list-delete">
                   <i class="fa fa-fw fa-trash fa-lg text-danger"></i>
                 </div>
-                <div class="check-list-input-div">
+                <div class="tasks-new_check-list-input-div">
                   <%= f.text_field :temp_memo, class: 'form-control check-list-input' %>
                 </div>
               </div>
 
-              <div class="mt-2 check-list-add tip" data-title="アイテム追加">
+              <div class="mt-2 tasks-new_check-list-add tip" data-title="アイテム追加">
                 <i class="fa fa-fw fa-plus-circle fa-lg text-secondary"></i>
               </div>
 
