@@ -8,6 +8,33 @@
   background: linear-gradient(45deg,#353d47,#21292e);
   overflow-x: hidden;
   transition: width .5s cubic-bezier(0.19,2,0.22,1);
+  &__element{
+    padding:0 10px;
+    height: 50px;
+    display: block;
+    white-space: nowrap;
+    font-size:15px;
+    text-decoration: none;
+    color: #e7e7e7;
+    &__icon{
+      margin-left:0;
+      width: 38px;
+      text-align: center;
+      display: inline-block;
+      margin-top: 2px;
+      font-size:18px;
+      position:relative;
+      line-height: 0.75em;
+      vertical-align: -.667em;
+    }
+    &__title{
+      width: 0;
+      white-space:nowrap;
+      padding-left:6px;
+      display:none;
+      position:relative;
+    }
+  }
 }
 .navbar-default{
   border: none;

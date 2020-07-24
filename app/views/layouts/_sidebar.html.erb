@@ -2,7 +2,7 @@
   <nav class="navbar navbar-default">
     <div class="side-menu-container">
       <div class="side-menu__header side-menu__public">
-        <%= link_to root_path,class: "navbar-brand prosto-one home-ajax-link side-menu__brand" do %>
+        <%= link_to '#',class: "navbar-brand prosto-one home-ajax-link side-menu__brand" do %>
           <div class = "logo-icon-container">
             <%= image_tag 'top.png',class: "brand-image" %>
           </div>
@@ -13,51 +13,51 @@
     <div>
       <ul class="nav navbar-nav">
         <li>
-          <%= link_to root_path,class: "ajax-link" do %>
-            <%= icon('fas','home') %>
-            <span class="title">ダッシュボード</span>
+          <%= link_to '#',class: "home-ajax-link side-menu__element" do %>
+            <%= icon('fas','home side-menu__element__icon fa-lg fa-fw') %>
+            <span class="side-menu__element__title">ダッシュボード</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to '#',class: "ajax-link side-menu__element" do %>
+            <%= icon('fas','plus-circle side-menu__element__icon fa-lg fa-fw') %>
+            <span class="side-menu__element__title">新しいタスクを発行</span>
+          <% end %>
+        </li>
+        <li class="border-bottom">
+          <%= link_to '#',class: "ajax-link side-menu__element" do %>
+            <%= icon('fas','users side-menu__element__icon fa-lg fa-fw') %>
+            <span class="side-menu__element__title">メンバーの状況</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to '#',class: "ajax-link side-menu__element" do %>
+            <%= icon('fas','clock side-menu__element__icon fa-lg fa-fw') %>
+            <span class="side-menu__element__title">最近更新したタスク</span>
             <% end %>
         </li>
         <li>
-          <%= link_to root_path,class: "ajax-link" do %>
-            <%= icon('fas','plus-circle') %>
-            <span class="title">新しいタスクを発行</span>
+          <%= link_to '#',class: "ajax-link side-menu__element" do %>
+            <%= icon('fas','search side-menu__element__icon fa-lg fa-fw') %>
+            <span class="side-menu__element__title">タスク検索</span>
             <% end %>
         </li>
         <li>
-          <%= link_to root_path,class: "ajax-link" do %>
-            <%= icon('fas','users') %>
-            <span class="title">メンバーの状況</span>
+          <%= link_to '#',class: "ajax-link side-menu__element" do %>
+            <%= icon('fas','tasks side-menu__element__icon fa-lg fa-fw') %>
+            <span class="side-menu__element__title">タスク管理</span>
+            <% end %>
+        </li>
+        <li class="border-bottom">
+          <%= link_to '#',class: "ajax-link side-menu__element" do %>
+            <%= icon('fas','boxes side-menu__element__icon fa-lg fa-fw') %>
+            <span class="side-menu__element__title">カテゴリー管理</span>
             <% end %>
         </li>
         <li>
-          <%= link_to root_path,class: "ajax-link" do %>
-            <%= icon('fas','clock') %>
-            <span class="title">最近更新したタスク</span>
-            <% end %>
-        </li>
-        <li>
-          <%= link_to root_path,class: "ajax-link" do %>
-            <%= icon('fas','search') %>
-            <span class="title">タスク検索</span>
-            <% end %>
-        </li>
-        <li>
-          <%= link_to root_path,class: "ajax-link" do %>
-            <%= icon('fas','tasks') %>
-            <span class="title">タスク管理</span>
-            <% end %>
-        </li>
-        <li>
-          <%= link_to root_path,class: "ajax-link" do %>
-            <%= icon('fas','boxes') %>
-            <span class="title">カテゴリー管理</span>
-            <% end %>
-        </li>
-        <li>
-          <%= link_to root_path,class: "ajax-link" do %>
-            <%= icon('fas','file') %>
-            <span class="title">共有文書</span>
+          <%= link_to '#',class: "ajax-link side-menu__element" do %>
+            <%= icon('fas','file side-menu__element__icon fa-lg fa-fw') %>
+            <span class="side-menu__element__title">共有文書</span>
             <% end %>
         </li>
       </ul>
