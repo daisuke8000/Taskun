@@ -1,9 +1,8 @@
 class TasksController < ApplicationController
-<<<<<<< HEAD
   def new
     @task = Task.new
-=======
+  end
+
   def index
->>>>>>> master
   end
 end
