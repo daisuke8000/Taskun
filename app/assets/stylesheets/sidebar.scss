@@ -35,6 +35,11 @@
       line-height:0.75em;
       vertical-align: -0.667em;
     }
+    &:hover{
+      text-decoration: none;
+      color:#fff;
+    }
+    
   }
 }
 .navbar-default{
@@ -70,8 +75,4 @@
   position: relative;
   top:-1px;
   display: inline-block;
-}
-a:hover{
-  text-decoration: none;
-  color:#fff;
 }
