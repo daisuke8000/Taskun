@@ -28,11 +28,12 @@
       vertical-align: -.667em;
     }
     &__title{
-      width: 0;
+      width: 180px;
       white-space:nowrap;
-      padding-left:6px;
-      display:none;
+      padding-left:16px;
       position:relative;
+      line-height:0.75em;
+      vertical-align: -0.667em;
     }
   }
 }
@@ -69,4 +70,8 @@
   position: relative;
   top:-1px;
   display: inline-block;
+}
+a:hover{
+  text-decoration: none;
+  color:#fff;
 }
