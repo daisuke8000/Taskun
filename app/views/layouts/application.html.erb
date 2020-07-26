@@ -10,8 +10,10 @@
   </head>
 
   <body>
-    <%= render '/layouts/navbar' %>
-    <%= render '/layouts/sidebar' %>
+    <% if controller.controller_name != 'homes' %>
+      <%= render '/layouts/navbar' %>
+      <%= render '/layouts/sidebar' %>
+    <% end %>
     <%= yield %>
     <%= render '/layouts/footer' %>
   </body>
