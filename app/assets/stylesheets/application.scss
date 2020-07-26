@@ -19,15 +19,18 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+body{
+  font-size: 14.4px;
+}
 .card {
   margin: auto;
 }
 
 .btn {
-  padding: 0;
-  margin-right: 5px;
-  width: 40px;
-  height: 35px;
+  padding: 6px 12px;
+  margin-right: 4px;
+  width: 44px;
+  height: 37px;
   background-color: #3490dc;
   text-align: center;
 }
@@ -48,4 +51,8 @@
 
 .status{
   background-color: #3490dc;
+}
+
+.d-sm-block{
+  height: 23px;
 }
