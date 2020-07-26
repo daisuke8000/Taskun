@@ -53,6 +53,14 @@ body{
   background-color: #3490dc;
 }
 
+
 .d-sm-block{
   height: 23px;
 }
+
+.container-login {
+  @extend .container-fluid;
+  max-width: 576px;
+  padding: 2rem;
+}
+
