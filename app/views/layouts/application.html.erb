@@ -4,7 +4,6 @@
     <title>Taskun</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
@@ -14,6 +13,7 @@
       <%= render '/layouts/navbar' %>
       <%= render '/layouts/sidebar' %>
     <% end %>
+    <div class="container">
     <%= yield %>
     <%= render '/layouts/footer' %>
   </body>

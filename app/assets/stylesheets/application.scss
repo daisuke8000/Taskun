@@ -4,3 +4,11 @@
 @import "navbar";
 @import "sidebar";
 @import "footer";
+
+// login-view
+
+.container-login {
+  @extend .container-fluid;
+  max-width: 576px;
+  padding: 2rem;
+}
