@@ -1,12 +1,75 @@
-.navbar__container{
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,.04);
-  max-width: 100%;
-  padding-left: 45px;
+.navbar{
+  &__container{
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,.04);
+    max-width: 100%;
+    padding-left: 45px;
+  }
+  &__profile-icon{
+    width: 35px;
+    height: 35px;
+    padding:2px;
+    border-radius: 50%;
+  }
+  &__update-user-status{
+    cursor: pointer;
+  }
+  &__select{
+    position: relative;
+  }
 }
-.navbar__profile-icon{
-  width: 35px;
-  height: 35px;
-  padding:2px;
-  border-radius: 50%;
+#nav-bar__status-dropdown:hover::after{
+  content: "本日開始";
+  background-color: #000;
+  color:#fff;
+  position:absolute;
+  float:none;
+  font-size: 0.9rem;
+  min-width: 4rem;
+  padding: .5rem 0;
+  margin:.125rem 0;
+  top:100%;
+  left:0;
+  z-index:1000;
+  text-align:left;
+  background-clip:padding-box;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 0.25rem;
+}
+#nav-bar__group:hover::after{
+  content: "活動中のグループ";
+  background-color: #000;
+  color:#fff;
+  position:absolute;
+  float:none;
+  font-size: 0.9rem;
+  min-width: 4rem;
+  padding: .5rem 0;
+  margin:.125rem 0;
+  top:100%;
+  left:0;
+  z-index:1000;
+  text-align:left;
+  background-clip:padding-box;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 0.25rem;
+}
+#nav-bar__account:hover::after{
+  content: "猫屋敷 honda0924@hotmail.co.jp";
+  background-color: #000;
+  color:#fff;
+  position:absolute;
+  float:none;
+  font-size: 0.9rem;
+  min-width: 4rem;
+  padding: .5rem 0;
+  margin:.125rem 0;
+  top:100%;
+  right:0;
+  left:auto;
+  z-index:1000;
+  text-align:right;
+  background-clip:padding-box;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 0.25rem;
 }
