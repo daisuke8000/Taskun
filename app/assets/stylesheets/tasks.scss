@@ -72,34 +72,14 @@
     background-color: #3490dc!important;
 }
 
-
-
-
+// task-show
 
 .tasks-show{
-  font-size: 14.4px;
+  margin: auto;
 }
-// .tasks-show > .card {
-//   margin: auto;
-// }
 
 .btn {
-  padding: 6px 12px;
   margin-right: 4px;
-  width: 44px;
-  height: 37px;
-  background-color: #3490dc;
-  text-align: center;
-}
-
-.btn-a{
-  float: left;
-  width: 130px;
-}
-
-.btn-b{
-  float: left;
-  width: 70px;
 }
 
 .priority{
@@ -109,7 +89,6 @@
 .status{
   background-color: #3490dc;
 }
-
 
 .d-sm-block{
   height: 23px;
