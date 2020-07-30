@@ -22,7 +22,7 @@ gem 'cancancan'
 gem 'rspec-rails'
 gem 'devise'
 gem 'haml-rails'
-gem 'bootsnap', '>= 1.1.0', require: false
+gem 'bootsnap', '>= 1.4.7', require: false
 #追加分
 gem 'bootstrap', '~> 4.5.0'
 gem 'devise-bootstrap-views'
