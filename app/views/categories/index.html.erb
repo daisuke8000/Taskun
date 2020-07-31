@@ -1,0 +1,130 @@
+<main class="py-4" id="main-content">
+  <div class="container gt-main-container">
+    <div class="row justify-content-center">
+      <div class="col-md-11 body-frame">
+        <div class="card">
+          <div class="card-header bg-primary text-white font-weight-bold">カテゴリー管理</div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-12 col-md-7 col-lg-8 mb-1">
+              カテゴリーを新規に作成したり、既存のカテゴリの登録情報を更新、削除することができます。
+                <div class="mt-3">
+                メンバーのアサイン（閲覧許可の設定）もここで行います。
+                <br>
+                メンバーをアサインする場合は、まず、アサインしたいカテゴリーの「登録情報の更新（”<i class="fa fa-fw fa-edit"></i>"のアイコン）」を押します。カテゴリーがない場合は「カテゴリーを新規作成する」ボタンからカテゴリーを作成します。
+                </div>
+                <div class="mt-3">
+                カテゴリーの設定欄にある「閲覧できるメンバーを選んでください。」で閲覧できるメンバーを選ぶと、アサインが完了します。
+                </div>
+                <div class="alert alert-danger mt-3" role="alert">
+                メンバーは、アサインされていないカテゴリーのタスクを閲覧することができません、必ず、適切なカテゴリーにアサインするようにしてください。
+                </div>
+              </div>
+              <div class="col-12 col-md-5 col-lg-4 border-left border-primary">
+                <div class="mb-2">
+                  <a href="#" class="btn btn-primary ajax-link tip" data-title="新規作成">カテゴリーを新規作成する</a>
+                </div>
+                <div class="mb-2">
+                  <a href="#" class="btn btn-outline-primary" target="guide">
+                  <i class="fa fa-fw fa-book-open fa-lg mr-1"></i>
+                  メンバーのアサインの仕方
+                  </a>
+                </div>
+              </div>
+              <div class="col-12 bg-light mt-3 mb-4 px-2 pt-2 ">
+                <h5>カテゴリー表示のフィルタリング設定</h5>
+                <div class="row mb-1">
+                  <div class="col-md-3">ステータス</div>
+                  <div class="col-md-auto">
+                    <select name="status" class="ajax-filter ajax-filter-select" data-url="#">
+                      <option value="1" selected>進行中</option>
+                      <option value="2">終了</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row md-4">
+                  <div class="col-md-3">
+                  削除されたカテゴリー
+                  </div>
+                  <div class="col-md-auto">
+                    <select name="delete" class="ajax-filter ajax-filter-select" data-url="#">
+                      <option value="1">はい</option>
+                      <option value="0" selected>いいえ</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="table-responsive ">
+                <table class="table table-bordered bg-light">
+                  <thead class="categries-index_teble">
+                    <tr class="categries-index_text-color">
+                      <th>
+                        <a href="#" class="ajax-link">名前</a>
+                        <i class="fa fa-fw fa-angle-down text-light"></i>
+                      </th>
+                      <th class="text-ilght categries-index_text-color">処理</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <input type="text" name="name" class="ajax-filter ajax-filter-input" data-url="#">
+                      </td>
+                      <td> </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <a href="#" class="ajax-link">デフォルトカテゴリー</a>
+                      </td>
+                      <td>
+                        <a href="#" class="btn btn-primary ajax-link tip" data-title="登録情報の更新">
+                        <i class="fa fa-fw fa-edit">
+                        </i>
+                        </a>
+                        <button type="button" class="btn btn-danger tip" data-toggle="modle" data-target="#modal-delete-projects-1144" data-title="削除">
+                          <i class="fa fa-fw fa-trash">
+                          </i>
+                        </button>
+                        <div class="modal fade" id="modal-delete-projects-1144" tabindex="-1" role="dialog" aria-labelledby="modal-delete-projects-1144-label" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="modal-delete-projects-1144-label">
+                                削除の確認</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">×</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <p>削除してよいですか？</p>
+                                <p>
+                                <strong>デフォルトカテゴリー</strong>
+                                </p>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                キャンセル
+                                </button>
+                                <form action="#" method="post" class="ajax-delete-form" id="ajaxFormmodal-delete-projects-1144" data-modal-id="modal-dalete-projects-1144">
+                                  <input type="hidden" name="_token" value="#">
+                                  <input type="hidden" name="_method" value="DELETE">
+                                  <button type="submit" class="btn btn-dangermodal-delete-button" data-target="#modal-delete-projects-1144">
+                                  削除
+                                  </button>
+                                  </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
