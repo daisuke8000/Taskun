@@ -25,30 +25,32 @@
                   <div class="box1 col-md-6">
                     <label for="bootstrap-duallistbox-nonselected-list_user_id[]">閲覧できないメンバー</label>
                     <span class="info-container">
+                    <br>
                       <span class="info">空</span>
                       <button type="button" class="btn btn-sm clear1" style="float:right!important;">すべて表示</button>
                     </span>
-                    <input type="text" class="form-control filter" placeholder="フィルター">
-                    <div class="btn-group buttons">
+                    <input class="form-control filter"  type="text" placeholder="フィルター">
+                    <div class="btn-group buttons categories-new_addbtn">
                       <button type="button" class="btn moveall btn-outline-secondary" title="すべて追加">
-                      全て追加
+                      すべて追加
                       </button>
                     </div>
-                    <select name="user_id[]_helper1" id="bootstrap-duallistbox-nonselected-list_user_id[]" style="height: 232px"></select>
+                    <select multiple="multiple" name="user_id[]_helper1" id="bootstrap-duallistbox-nonselected-list_user_id[]" style="height: 232px" class="categories-new_multiple"></select>
                   </div>
                   <div class="box2 col-md-6">
                     <label for="bootstrap-duallistbox-selected-list_user_id[]">閲覧できるメンバー</label>
                     <span class="info-container">
+                    <br>
                       <span class="info">１名</span>
                       <button type="button" class="btn btn-sm clear2" style="float:right!important;">すべて表示</button>
                     </span>
                     <input type="text" class="form-control filter" placeholder="フィルター">
-                    <div class="btn-group buttons">
+                    <div class="btn-group buttons categories-new_delbtn">
                       <button type="button" class="btn removeall btn-outline-secondary" title="すべて削除">
                       すべて削除
                       </button>
                     </div>
-                    <select name="user_id[]_helper2" id="bootstrap-duallistbox-selected-list_user_id[]" multiple="multiple" style="height: 232px;">
+                    <select name="user_id[]_helper2" id="bootstrap-duallistbox-selected-list_user_id[]" multiple="multiple" style="height: 232px;" class="categories-new_multiple">
                       <option value="834" selected></option>
                     </select>
                   </div>
@@ -74,8 +76,18 @@
                   </div>
                 </div>
                 <div class="form-group">
+                  <label for="manager_editable" class="control-label">
+                  マネージャが変更できるか
+                  <span class="badge badge-danger">必須</span>
+                  </label>
+                  <select name="manager_editable" id="manager_editable" class="form-control" required>
+                    <option value="1" selected>はい</option>
+                    <option value="0">いいえ</option>
+                  </select>
+                </div>
+                <div class="form-group">
                   <label for="manager_deletable" class="control-label">
-                  マネージャーが削除できるか
+                  マネージャが削除できるか
                   <span class="badge badge-danger">必須</span>
                   </label>
                   <select name="manager_deletable" id="manager_deletable" class="form-control" required>

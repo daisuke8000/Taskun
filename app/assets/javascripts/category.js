@@ -46,7 +46,7 @@ $(document).on('click','.removeall',function (e) {
 });
 
 function checkDisabled(){
-  if(($('#title').length && $('#title').val() && ($('#url').length && $('#url').val() || $('#name').length && $('#name').val()){
+  if(($('#title').length && $('#title').val() && ($('#url').length && $('#url').val() || $('message').length && $('#message').val())) || $('#name').length && $('#name').val()) {
     $('.assignMember').attr('disabled', false);
   }
 }
