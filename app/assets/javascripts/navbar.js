@@ -1,0 +1,25 @@
+$(function(){
+  $(".side-menu").hover(function(){
+    $(".side-menu").css("width","240px");
+  },function(){
+    $(".side-menu").css("width","60px");
+  });
+  $("#nav-bar__guide-dropdown").click(function(){
+    $("#nav-bar__guide-dropdown").children(".dropdown-menu").toggleClass("show");
+  });
+  $("#nav-bar__guide-dropdown").focusout(function(){
+    $("#nav-bar__guide-dropdown").children(".dropdown-menu").removeClass("show");
+  });
+  $("#nav-bar__status-dropdown").click(function(){
+    $("#nav-bar__status-dropdown").children(".dropdown-menu").toggleClass("show");
+  });
+  $("#nav-bar__status-dropdown").focusout(function(){
+    $("#nav-bar__status-dropdown").children(".dropdown-menu").removeClass("show");
+  });
+  $("#nav-bar__dropdown").click(function(){
+    $("#nav-bar__dropdown").children(".dropdown-menu").toggleClass("show");
+  });
+  $("#nav-bar__dropdown").focusout(function(){
+    $("#nav-bar__dropdown").children(".dropdown-menu").removeClass("show");
+  });
+});
