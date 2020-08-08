@@ -75,7 +75,6 @@ application up and running.
 |deadline|string|null: false|
 |startdate|string|null: false|
 |status|integer|null: false|
-|member_id|references|null: false, foreign_key: true|
 |category_id|references|null: false, foreign_key: true|
 |ancestry|string|null: false|
 
@@ -83,6 +82,7 @@ application up and running.
 - belongs_to :category
 - has_many :officers
 - has_many :users through: officers
+- has_many :comments through: officers
 
 
 ## officersテーブル
