@@ -1,0 +1,16 @@
+.footer{
+  font-size: 85%;
+  text-align: center;
+}
+.footer-links{
+  & li{
+    display: inline-block;
+    &+li{
+      margin-left:1rem;
+    }
+  }
+}
+ul{
+  margin-top:0;
+  margin-bottom: 1rem;
+}
