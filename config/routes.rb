@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/tasks', to: 'tasks#show'
 
   resources :tasks, only: [:index]
+  resources :categories
 
 
 end

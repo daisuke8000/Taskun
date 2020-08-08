@@ -1,0 +1,99 @@
+<div class="row content-container">
+  <nav class="navbar fixed-top navbar-expand-md navbar-light navbar__container offcanvas-desktop navbar-public">
+    <div class="container navbar__main-container">
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+              <%= link_to '#',class: "nav-link ajax-link" do %>
+                <span>招待する</span>
+                <%= icon('fas','mail-bulk fa-lg') %>
+              <% end %>
+          </li>
+          <li class="nav-item dropdown" id="nav-bar__guide-dropdown">
+              <%= link_to '#',class: "nav-link dropdown-toggle" do %>
+                <span class="mr-2">
+                  <span>ガイド</span>
+                  <%= icon('fas','book-open fa-lg') %>
+                </span>
+              <% end %>
+              <div class="dropdown-menu">
+                <div class="dropdown-item">
+                  <%= link_to "Taskunの基本的な仕組み","#"%>
+                </div>
+                <div class="dropdown-item">
+                  <%= link_to "ダッシュボードの使い方","#"%>
+                </div>
+                <div class="dropdown-item">
+                  <%= link_to "タスクの発行の仕方","#"%>
+                </div>
+                <div class="dropdown-item">
+                  <%= link_to "メンバーの招待の仕方","#"%>
+                </div>
+                <div class="dropdown-item">
+                  <%= link_to "メンバーのアサインの仕方","#"%>
+                </div>
+                <div class="dropdown-item">
+                  <%= link_to "カテゴリー作成の仕方","#"%>
+                </div>
+                <div class="dropdown-item">
+                  <%= link_to "グループ全体のタスクを管理、把握する","#"%>
+                </div>
+                <div class="dropdown-item">
+                  <%= link_to "「仕事の見える化」機能の使い方","#"%>
+                </div>
+                <div class="dropdown-item">
+                  <%= link_to "その他のガイド","#"%>
+                </div>
+              </div>
+              
+          </li>
+          <li class="nav-item dropdown" id= "nav-bar__status-dropdown">
+            <%= link_to '#',class: "nav-link dropdown-toggle" do %>
+              <span class="tip now-user-status">
+                <span></span>
+                <%= icon('fas','sign-in-alt fa-lg') %>
+              </span>
+            <% end %>
+            <div class="dropdown-menu">
+              <div class="dropdown-item navbar__update-user-status">
+                <%= icon('fas','briefcase fa-lg') %>
+                Taskun以外の作業中
+              </div>
+              <div class="dropdown-item navbar__update-user-status">
+                <%= icon('fas','coffee fa-lg') %>
+                離席
+              </div>
+              <div class="dropdown-item navbar__update-user-status">
+                <%= icon('fas','power-off fa-lg') %>
+                本日終了
+              </div>
+            </div>
+          </li>
+          <li class="nav-item navbar__select" id="nav-bar__group">
+            <form id="change-group-form">
+              <select name="group" class="custom-select">
+                <option>挫折乗り越えサロン</option>
+                <option>Taskun</option>
+              </select>
+            </form>
+          </li>
+          <li class="nav-item dropdown" id="nav-bar__dropdown">
+            <%= link_to '#',class: "ml-2 tip-accoount",id:'nav-bar__account' do %>
+              <%= image_tag 'sample-account.png',class: "navbar__profile-icon" %>
+              <span class="caret">
+                <%= icon('fas','caret-down') %>
+              </span>
+            <% end %>
+            <div class="dropdown-menu dropdown-menu-right">
+              <%= link_to '管理ページ','#' ,class:"dropdown-item ajax-link" %>
+              <%= link_to 'ログアウト','#' ,class:"dropdown-item ajax-link" %>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+
+
