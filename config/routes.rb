@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/groups' => 'groups#show'
 
   resources :tasks, only: [:index]
+  resources :categories
 
 
 end
