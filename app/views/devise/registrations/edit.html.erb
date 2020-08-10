@@ -19,7 +19,8 @@
                 </div>
 
                 <div class="form-group">
-                  <%= f.label :password_confirmation, class: "control-label" %><br/>
+                  <%= f.label :password_confirmation, class: "control-label" %>
+                  <span class="badge badge-danger">必須</span>
                   <%= f.password_field :password_confirmation, autofocus: true, autocomplete: "new-password", class: 'form-control' %>
                 </div>
 
