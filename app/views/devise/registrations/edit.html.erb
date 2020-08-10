@@ -9,9 +9,6 @@
 
             <div class="card-body">
 
-              <form method="POST" action="https://grouptask.biz/user/edit_password" class="ajax-form" id="ajaxForm">
-                <input type="hidden" name="_token" value="uQ2gsjwMuxZ4HhEiPT5FFOBDu35QBs3JMd5I8PFQ">
-                <input type="hidden" name="_method" value="put">
                 <div class="form-group">
                   <%= f.label :password, 'パスワード', class: "control-label" %>
                   <span class="badge badge-danger">必須</span>
@@ -28,7 +25,6 @@
                   <%= f.submit "更新", class: 'btn btn-primary d-block' %>
                   </button>
                 </div>
-              </form>
 <% end %>
 
 </div>
