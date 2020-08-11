@@ -1,21 +1,25 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = Categories.all
+    @category = Category.all
   end
 
   def create
-    Category.create(categories_params)
+    Category.create(category_params)
     redirect_to categories_path
   end
 
   def destroy
-    @categories = Categories.find(params[:id])
-    @categories.destroy
+    @category = Category.find(params[:id])
+    @category.destroy
     redirect_to categories_path
   end
 
   def edit
     @category = Category.find(params[:id])
+  end
+
+  def category_params
+    params.require(:categories_name)
   end
 
 end

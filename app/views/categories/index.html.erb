@@ -24,7 +24,7 @@
                 <div class="mb-2">
                   <%= link_to "カテゴリーを新規作成する", new_category_path, class: "btn btn-primary ajax-link tip" %>
                 </div>
-                <div class="mb-2">
+                <div class="mb-2">  <%# ここはあとで追加%>
                   <a href="#" class="btn btn-outline-primary" target="guide">
                   <i class="fa fa-fw fa-book-open fa-lg mr-1"></i>
                   メンバーのアサインの仕方
@@ -37,7 +37,7 @@
                   <div class="col-md-3">ステータス</div>
                   <div class="col-md-auto">
                     <select name="status" class="ajax-filter ajax-filter-select" data-url="#">
-                      <option value="1" selected>進行中</option>
+                      <option value="1" selected>進行中</option> <%# フィルタリング %>
                       <option value="2">終了</option>
                     </select>
                   </div>
@@ -74,7 +74,9 @@
                     </tr>
                     <tr>
                       <td>
-                        <a href="#" class="ajax-link">デフォルトカテゴリー</a>
+                        <% @category.each do |category| %>
+                          <%= link_to categories_name, class: "ajax-link" %>
+                        <% end %>
                       </td>
                       <td>
                        <%= link_to categories_path, class: "btn btn-primary ajax-link tip" do %>
