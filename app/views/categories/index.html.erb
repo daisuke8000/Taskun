@@ -82,10 +82,9 @@
                        <%= link_to categories_path, class: "btn btn-primary ajax-link tip" do %>
                         <i class="fa fa-fw fa-edit"></i>
                        <% end %>
-                        <button type="button" class="btn btn-danger tip" data-toggle="modle" data-target="#modal-delete-projects-1144" data-title="削除">
-                          <i class="fa fa-fw fa-trash">
-                          </i>
-                        </button>
+                       <%= link_to categories_path, method: :delete, :data => {:toggle => "modal", :target => "#modal-delete-projects-1144", :title => "削除"}, class: "btn btn-danger tip" do %>
+                        <i class="fa fa-fw fa-trash"></i>
+                       <% end %>
                         <div class="modal fade" id="modal-delete-projects-1144" tabindex="-1" role="dialog" aria-labelledby="modal-delete-projects-1144-label" aria-hidden="true">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
