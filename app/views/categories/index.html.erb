@@ -77,10 +77,9 @@
                         <a href="#" class="ajax-link">デフォルトカテゴリー</a>
                       </td>
                       <td>
-                        <a href="#" class="btn btn-primary ajax-link tip" data-title="登録情報の更新">
-                        <i class="fa fa-fw fa-edit">
-                        </i>
-                        </a>
+                       <%= link_to categories_path, class: "btn btn-primary ajax-link tip" do %>
+                        <i class="fa fa-fw fa-edit"></i>
+                       <% end %>
                         <button type="button" class="btn btn-danger tip" data-toggle="modle" data-target="#modal-delete-projects-1144" data-title="削除">
                           <i class="fa fa-fw fa-trash">
                           </i>
