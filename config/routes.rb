@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'homes#index'
   resources :users
   get '/tasks' , to: 'tasks#show'
-  get '/groups' , to: 'groups#show'
+  get '/groups' , to: 'groups#create'
   resources :tasks, only: [:index]
   resources :categories
 end
