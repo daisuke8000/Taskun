@@ -3,8 +3,13 @@ class CategoriesController < ApplicationController
     @category = Category.all
   end
 
+  def new
+    @category = Category.new
+  end
+
   def create
-    Category.create(category_params)
+    @category = Category.new(category_params)
+    @category.save
     redirect_to categories_path
   end
 
@@ -18,8 +23,14 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
   end
 
+  def search
+    @category = Category.find_by('category_name LIKE(?)', "%#{params[:keyword]}%")
+    render json: @category
+  end
+
+  private
   def category_params
-    params.require(:categories_name)
+    params.require(:category)
   end
 
 end
