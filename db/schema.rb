@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(version: 2020_07_11_035406) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "task_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "task_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "task_users_id"
     t.string "task_name"

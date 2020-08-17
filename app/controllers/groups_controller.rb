@@ -1,4 +1,4 @@
 class GroupsController < ApplicationController
-  def create
+  def index
   end
 end
