@@ -10,12 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_11_035406) do
+ActiveRecord::Schema.define(version: 2020_08_19_030551) do
+
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "category_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "task_id"
     t.integer "user_id"
     t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "task_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "task_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -33,7 +46,8 @@ ActiveRecord::Schema.define(version: 2020_07_11_035406) do
     t.string "amcestry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "category"
+    t.bigint "category_id", null: false
+    t.index ["category_id"], name: "index_tasks_on_category_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -47,4 +61,5 @@ ActiveRecord::Schema.define(version: 2020_07_11_035406) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "tasks", "categories"
 end
