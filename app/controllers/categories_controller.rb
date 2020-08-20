@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   def index
     @category = Category.all
+    # binding.pry
   end
 
   def new
@@ -8,6 +9,7 @@ class CategoriesController < ApplicationController
   end
 
   def create
+    binding.pry
     @category = Category.new(category_params)
     @category.save
     redirect_to categories_path
@@ -30,7 +32,7 @@ class CategoriesController < ApplicationController
 
   private
   def category_params
-    params.require(:category)
+    params.require(:categories).permit(:category_name)
   end
 
 end

@@ -75,11 +75,11 @@
                       <td> </td>
                     </tr>
                     <tr>
-                      <td>
-                        <% @category.each do |category| %>
-                          <%= link_to categories_name, class: "ajax-link" %>
-                        <% end %>
-                      </td>
+                      <% @category.each do |category| %>
+                        <td>
+                            <%= link_to category.category_name, new_category_path(category.category_name), class: "ajax-link" %>
+                        </td>
+                      <% end %>
                       <td>
                        <%= link_to categories_path, class: "btn btn-primary ajax-link tip" do %>
                         <i class="fa fa-fw fa-edit"></i>

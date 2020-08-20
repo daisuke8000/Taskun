@@ -19,8 +19,11 @@
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
  @import "navbar";
-@import "sidebar";
-@import "footer";
+ @import "sidebar";
+ @import "footer";
+ @import "tasks";
+ @import "categories";
+ @import "users";
 
  body {
    margin: 0;
