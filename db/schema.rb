@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2020_08_10_070252) do
     t.string "amcestry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "category"
+    t.string "category_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
