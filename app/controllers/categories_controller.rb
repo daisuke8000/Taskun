@@ -1,11 +1,10 @@
 class CategoriesController < ApplicationController
   def index
     @category = Category.all
-    # binding.pry
   end
 
   def new
-    @category = Category.new
+    # @category = Category.new
   end
 
   def create
@@ -23,6 +22,7 @@ class CategoriesController < ApplicationController
 
   def edit
     @category = Category.find(params[:id])
+    reirect_to new_category_path
   end
 
   def search

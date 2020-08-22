@@ -4,8 +4,7 @@ Rails.application.routes.draw do
   root 'homes#index'
   resources :users
   resources :tasks, only: [:index]
-  post 'categories', to: 'categories#create'
-  resources :categories do
+  resources :categories, only: [:index, :create, :new, :destroy, :edit, :search] do
     collection do
       get 'search'
     end
