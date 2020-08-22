@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   def index
-    @category = Category.all
+    @categories = Category.all
   end
 
   def new
@@ -8,7 +8,6 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    binding.pry
     @category = Category.new(category_params)
     @category.save
     redirect_to categories_path
@@ -22,7 +21,7 @@ class CategoriesController < ApplicationController
 
   def edit
     @category = Category.find(params[:id])
-    reirect_to new_category_path
+    redirect_to new_category_path
   end
 
   def search
@@ -32,7 +31,7 @@ class CategoriesController < ApplicationController
 
   private
   def category_params
-    params.require(:categories).permit(:category_id, :category_name)
+    params.require(:category).permit(:category_id, :category_name)
   end
 
 end

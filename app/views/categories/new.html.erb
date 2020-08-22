@@ -7,7 +7,6 @@
         <div class="card">
           <div class="card-header bg-primary text-white font-weight-bold">（カテゴリー）新規作成</div>
           <div class="card-body">
-            <form action="#" method="POST" class="ajax-form" id="ajaxForm">
               <input type="hidden" name="_token" value="#">
                 <div class="form-group">
                   <%= form_with model: @category, local: true do |f| %>
@@ -144,7 +143,6 @@
                 </div>
                 <%= f.submit '登録', class: "btn btn-primary assignMenber" %>
               <% end %>
-            </form>
           </div>
         </div>
       </div>
