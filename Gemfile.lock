@@ -99,6 +99,7 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.13.1)
+    flatpickr (4.6.3.1)
     font-awesome-sass (5.4.1)
       sassc (>= 1.11)
     globalid (0.4.2)
@@ -293,6 +294,7 @@ DEPENDENCIES
   devise
   devise-bootstrap-views
   devise-i18n
+  flatpickr
   font-awesome-sass (~> 5.4.1)
   haml-rails
   jbuilder (~> 2.5)
