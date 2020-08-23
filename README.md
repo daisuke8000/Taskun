@@ -77,6 +77,7 @@ application up and running.
 |status|integer|null: false|
 |category_id|references|null: false, foreign_key: true|
 |ancestry|string|null: false|
+|message|string|null: false|
 
 ### Association
 - belongs_to :category
