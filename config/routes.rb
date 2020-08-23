@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
-
-  devise_for :users
+  get 'tasks/new' => 'tasks#new'
+  devise_for :users,controllers: { registrations: 'registrations' }
   root 'homes#index'
   resources :users
+
+  get '/tasks', to: 'tasks#show'
+
   resources :tasks, only: [:index]
+  resources :categories
+
 
 end

@@ -2,4 +2,90 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.container {
+  max-width: 100%!important;
+}
 
+.tasks-new_app-container {
+  min-height: 100%;
+  position: relative;
+  background-color: #f9f9f9;
+}
+
+.tasks-new_content-container {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+
+#main-content {
+  margin-top: 60px;
+  width: 100%;
+}
+
+#paste {
+  max-height: 70vh;
+  overflow: scroll;
+  padding: 5px;
+}
+
+.tasks-new_paste-message {
+  min-height: 100px;
+}
+
+.tasks-new_icon-button {
+  padding: 6px;
+  border-radius: 5px;
+}
+
+.tasks-new_flatpickr-input {
+    background-color: #e9ecef!important;
+    cursor: pointer;
+}
+
+.tasks-new_check-list-item {
+  display: flex;
+}
+
+.tasks-new_check-list-delete {
+  width: 40px;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  i {
+    line-height: 2;
+  }
+}
+
+.tasks-new_check-list-input-div {
+  width: calc(100% - 40px);
+  display: inline-block;
+}
+
+.tasks-new_check-list-add {
+  width: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #3490dc!important;
+}
+
+// task-show
+
+.tasks-show_card{
+  margin: auto;
+}
+
+.tasks-show_btn {
+  margin-right: 4px;
+}
+
+.tasks-show_priority{
+  background-color: red;
+}
+
+.tasks-show_status{
+  background-color: #3490dc;
+}
