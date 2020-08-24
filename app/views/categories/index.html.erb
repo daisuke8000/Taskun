@@ -70,13 +70,12 @@
                   <tbody>
                     <tr>
                       <td>
-                        <input type="form" id="form" name="name" class="ajax-filter ajax-filter-input categories-index_namesearch" data-url="#">
+                        <input type="form" id="form" name="name" class="ajax-filter ajax-filter-input categories-index_namesearch">
                       </td>
-                      <td> </td>
                     </tr>
                     <% @categories.each do |category| %>
                       <tr>
-                          <td>
+                          <td id="result">
                               <%= link_to category.category_name, new_category_path(category.category_name), class: "ajax-link" %>
                           </td>
                           <td>

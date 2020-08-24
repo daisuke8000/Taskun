@@ -121,19 +121,47 @@ $(document).on('turbolinks:load', function(){
   e.preventDefault();
   var input = $.trim($(this).val());
   $.ajax({
-    url: '/category/search',
+    url: '/categories/search',
     type: 'GET',
     data: ('keyword=' + input),
     processData: false,
     contentType: false,
     dataType: 'json'
   })
-
   .done(function(data){
-    $('#result').find('li').remove();
-    $(data).each(function(i, user){
-      $('#result').append('<li>' + user.userid + '</li>')
+    $(data).each(function(i, category){
+      $('#result').append('<a>' + link_to category.category_name, new_category_path(category.category_name), class="ajax-link" + '</a>')
     });
   })
 });
 });
+
+// $('#category-search-field').on('keyup', function(e){
+//   var input = $("#category-search-field").val();
+
+// $.ajax({
+//   type: 'GET',
+//   url: '/categories',
+//   data: { keyword: input },
+//   dataType: 'json'
+// })
+
+// .done(function(categories){
+//   if (input.length === 0) {
+//     $('#category-search-field').empty();
+//   }
+//   else if (input.length !== 0){
+//     $('#category-search-field').empty();
+//     categories.forEach(function(category){
+//       appendCategory(category)
+//     });
+//   }
+//   else {
+//     $('#category-search-field').empty();
+//     appendErrMsgToHTML("該当するカテゴリーが見つかりません");
+//   }
+// })
+// .fail(function() {
+//   alert('カテゴリー検索に失敗しました')
+// });
+// });

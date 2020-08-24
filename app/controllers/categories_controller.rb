@@ -25,7 +25,7 @@ class CategoriesController < ApplicationController
   end
 
   def search
-    @category = Category.find_by('category_name LIKE(?)', "%#{params[:keyword]}%")
+    @category = Category.where('category_name LIKE(?)', "%#{params[:keyword]}%")
     render json: @category
   end
 
