@@ -10,19 +10,19 @@
               <div class="card-header bg-primary text-white font-weight-bold">新しいタスクを発行</div>
                 <div class="card-body">
 
-          <%= form_for @task, :url => {:action => :new} do |f| %>
+          <%= form_for @task do |f| %>
 
           <div class="form-group">
             <%= f.label "カテゴリー", class: 'control-label' %>
               <span class="badge badge-danger">必須</span>
             [<a href="#">新しいカテゴリーを作成</a>]<br />
-            <%= f.collection_select :category_id, Category.all, :category_id, :category_name,{prompt: 'デフォルトカテゴリー'}, {class: 'form-control'} %>
+            <%= f.collection_select :category_id, @categories, :category_id, :category_name,{prompt: 'デフォルトカテゴリー'}, {class: 'form-control'}  %>
           </div>
 
           <div class="form-group">
             <%= f.label "担当者", class: 'control-label' %>
             <span class="badge badge-danger">必須</span><br />
-            <%= f.collection_select :task_users_id, TaskUser.all, :task_users_id, :user_id, {prompt: 'テストユーザー'}, {class: 'form-control'} %>
+            <%= f.collection_select :task_users_id, @task_users, :task_users_id, :user_id, {prompt: 'テストユーザー'}, {class: 'form-control'} %>
             <small>複数のメンバーを選択するには「Ctrl」を押しながらメンバーを選択して下さい。</small>
           </div>
 

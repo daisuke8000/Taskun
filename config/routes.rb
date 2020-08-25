@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  get 'tasks/new' => 'tasks#new'
+  get 'tasks/new', to: 'tasks#new'
   devise_for :users
   root 'homes#index'
   resources :users
 
   get '/tasks', to: 'tasks#show'
 
-  resources :tasks, only: [:index]
+  resources :tasks
   resources :categories
 
 
