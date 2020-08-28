@@ -1,3 +1,16 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.users-member_card{
+  margin: 100px 0 0 100px;
+  width: 90%;
+}
+
+.users-member_card_th{
+  background-color:#3490dc;
+  color: white;
+}
+
+.ajax-link{
+  color: white;
+}
