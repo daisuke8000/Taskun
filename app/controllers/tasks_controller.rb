@@ -12,8 +12,6 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
-    @categories = Category.all
-    @task_users = TaskUser.all
     if @task.save
       flash[:success] = "投稿しました"
       redirect_to root_url
