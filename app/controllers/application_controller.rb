@@ -18,7 +18,9 @@ class ApplicationController < ActionController::Base
   end
 
   def layout_by_resource
-    if devise_controller?
+    # deviseでの新規登録・ログインはaction_name == 'new' として実行するため"devise-application"を選択する
+    # ログイン後の画面（パスワード変更・ユーザー情報変更などのセッション維持されているもの)は"application"を選択する
+    if devise_controller? && resource_name == :user && action_name == 'new'
       "devise-application"
     else
       "application"
