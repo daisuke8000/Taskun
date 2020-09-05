@@ -11,9 +11,8 @@
                 <div class="card-body">
 
           <%= form_for @task do |f| %>
-
           <div class="form-group">
-            <%= f.label "カテゴリー", class: 'control-label' %>
+            <%= f.label :category_id, "カテゴリー", class: 'control-label' %>
               <span class="badge badge-danger">必須</span>
             [<a href="#">新しいカテゴリーを作成</a>]<br />
             <%= f.collection_select :category_id, Category.all, :id, :category_name, {prompt: '選択してください'}, {class: 'form-control'} %>
@@ -22,7 +21,7 @@
           <div class="form-group">
             <%= f.label "担当者", class: 'control-label' %>
             <span class="badge badge-danger">必須</span><br />
-            <%= f.collection_select :task_users_id, TaskUser.all, :task_users_id, :user_id, {prompt: '選択してください'}, {class: 'form-control'} %>
+            <%= f.collection_select :users_id, User.all, :id, :name, {prompt: '選択してください'}, {class: 'form-control'} %>
             <small>複数のメンバーを選択するには「Ctrl」を押しながらメンバーを選択して下さい。</small>
           </div>
 
