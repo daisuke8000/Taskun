@@ -1,123 +1,154 @@
-var dualListBoxOption = {
-  filterTextClear: 'すべて表示',
-  nonSelectedListLabel: '閲覧できないメンバー',
-  selectedListLabel: '閲覧できるメンバー',
-  preserveSelectionOnMove: '移動',
-  filterPlaceHolder: 'フィルター',
-  infoText: '{0} 名',
-  moveSelectedLabel: '追加',
-  moveAllLabel: 'すべて追加',
-  removeSelectedLabel: '削除',
-  removeAllLabel: 'すべて削除',
-  infoTextFiltered: '<span class="label label-warning">絞り込み</span> {1} 名中 {0}',
-  infoTextEmpty: '空',
-  btnMoveAllText: 'すべて追加',
-  btnRemoveAllText: 'すべて削除',
-  moveOnSelect: true
-};
+// var dualListBoxOptions = {
+//   filterTextClear: 'すべて表示',
+//   nonSelectedListLabel: '閲覧できないメンバー',
+//   selectedListLabel: '閲覧できるメンバー',
+//   preserveSelectionOnMove: '移動',
+//   filterPlaceHolder: 'フィルター',
+//   infoText: '{0} 名',
+//   moveSelectedLabel: '追加',
+//   moveAllLabel: 'すべて追加',
+//   removeSelectedLabel: '削除',
+//   removeAllLabel: 'すべて削除',
+//   infoTextFiltered: '<span class="label label-warning">絞り込み</span> {1} 名中 {0}',
+//   infoTextEmpty: '空',
+//   btnMoveAllText: 'すべて追加',
+//   btnRemoveAllText: 'すべて削除',
+//   moveOnSelect: true
+// };
 
-var dualListBoxOptionsClient = {
-  filterTextClear: 'すべて表示',
-  nonSelectedListLabel: '閲覧できない顧客',
-  selectedListLabel: '閲覧できる顧客',
-  preserveSelectionOnMove: '移動',
-  filterPlaceHolder: 'フィルター',
-  infoText: '{0} 名',
-  moveSelectedLabel: '追加',
-  moveAllLabel: 'すべて追加',
-  removeSelectedLabel: '削除',
-  removeAllLabel: 'すべて削除',
-  infoTextFiltered: '<span class="label label-warning">絞り込み</span> {1} 名中 {0}',
-  infoTextEmpty: '空',
-  btnMoveAllText: 'すべて追加',
-  btnRemoveAllText: 'すべて削除',
-  moveOnSelect: true
-};
+// var dualListBoxOptionsClient = {
+//   filterTextClear: 'すべて表示',
+//   nonSelectedListLabel: '閲覧できない顧客',
+//   selectedListLabel: '閲覧できる顧客',
+//   preserveSelectionOnMove: '移動',
+//   filterPlaceHolder: 'フィルター',
+//   infoText: '{0} 名',
+//   moveSelectedLabel: '追加',
+//   moveAllLabel: 'すべて追加',
+//   removeSelectedLabel: '削除',
+//   removeAllLabel: 'すべて削除',
+//   infoTextFiltered: '<span class="label label-warning">絞り込み</span> {1} 名中 {0}',
+//   infoTextEmpty: '空',
+//   btnMoveAllText: 'すべて追加',
+//   btnRemoveAllText: 'すべて削除',
+//   moveOnSelect: true
+// };
 
-$('.duallistbox').bootstrapDualListbox(dualListBoxOptions);
-$('.duallistbox-client').bootstrapDuallListbox(dualListBoxOptionsClient);
-$('.assignMenber').attr('disabled', true);
-$(document).on('click','.removeall',function (e) {
-  var is_client = $(this).parent().parent().parent().parent().find('#client_id\\[\\]').length;
-  if(!is_client) {
-    $('.assignMember').attr('disabled', true);
-    viewNotMemberAlert();
-  }
-});
+// $('.duallistbox').bootstrapDualListbox(dualListBoxOptions);
+// $('.duallistbox-client').bootstrapDuallListbox(dualListBoxOptionsClient);
+// $('.assignMenber').attr('disabled', true);
+// $(document).on('click','.removeall',function (e) {
+//   var is_client = $(this).parent().parent().parent().parent().find('#client_id\\[\\]').length;
+//   if(!is_client) {
+//     $('.assignMember').attr('disabled', true);
+//     viewNotMemberAlert();
+//   }
+// });
 
-function checkDisabled(){
-  if(($('#title').length && $('#title').val() && ($('#url').length && $('#url').val() || $('message').length && $('#message').val())) || $('#name').length && $('#name').val()) {
-    $('.assignMember').attr('disabled', false);
-  }
-}
+// function checkDisabled(){
+//   if(($('#title').length && $('#title').val() && ($('#url').length && $('#url').val() || $('message').length && $('#message').val())) || $('#name').length && $('#name').val()) {
+//     $('.assignMember').attr('disabled', false);
+//   }
+// }
 
-$(document).on('click','.moveall',function (e) {
-  var is_client = $(this).parent().parent().parent().parent().find('#client_id\\[\\]').length;
-  if(!is_client) {
-    checkInMember();
-    checkDisabled();
-    hideNotMemberAlert();
-  }
-});
+// $(document).on('click','.moveall',function (e) {
+//   var is_client = $(this).parent().parent().parent().parent().find('#client_id\\[\\]').length;
+//   if(!is_client) {
+//     checkInMember();
+//     checkDisabled();
+//     hideNotMemberAlert();
+//   }
+// });
 
-$(document).on('change','#bootstrap-duallistbox-selected-list_user_id\\[\\]',function (e) {
-  var option = $('##bootstrap-duallistbox-selected-list_user_id\\[\\] option');
-  checkInMember(option);
-  if(!option.length) {
-    $('.assignMember').attr('disabled', true);
-  }
-});
+// $(document).on('change','#bootstrap-duallistbox-selected-list_user_id\\[\\]',function (e) {
+//   var option = $('##bootstrap-duallistbox-selected-list_user_id\\[\\] option');
+//   checkInMember(option);
+//   if(!option.length) {
+//     $('.assignMember').attr('disabled', true);
+//   }
+// });
 
-$(document).on('change','#bootstrap-duallistbox-nonselected-list_user_id\\[\\]',function (e) {
-  checkInMember();
-  checkDisabled();
-});
+// $(document).on('change','#bootstrap-duallistbox-nonselected-list_user_id\\[\\]',function (e) {
+//   checkInMember();
+//   checkDisabled();
+// });
 
-$(document).on('input','#title','#url','#name','#message',function (e){
-  if(($('#title').length && $('#title').val() && ($('#url').length && $('#url').val() || $('#message').length && ('#message').val())) || $('#name').length && $('#name').val()) {
-    var option = $('#bootstrap-duallistbox-selected-list_user_id\\[\\] option');
-    if(option.length) {
-      $('.assignMember').attr('disabled', false);
-    } else {
-      $('.assignMember').attr('disabled', true);
-    }
-  } else {
-    $('.assignMember').attr('disabled', true);
-  }
-});
+// $(document).on('input','#title','#url','#name','#message',function (e){
+//   if(($('#title').length && $('#title').val() && ($('#url').length && $('#url').val() || $('#message').length && ('#message').val())) || $('#name').length && $('#name').val()) {
+//     var option = $('#bootstrap-duallistbox-selected-list_user_id\\[\\] option');
+//     if(option.length) {
+//       $('.assignMember').attr('disabled', false);
+//     } else {
+//       $('.assignMember').attr('disabled', true);
+//     }
+//   } else {
+//     $('.assignMember').attr('disabled', true);
+//   }
+// });
 
-$('document').on('click', '.assignMember', function (e) {
-  $('document').off("input", "#title, #url, #name, #message");
-});
+// $('document').on('click', '.assignMember', function (e) {
+//   $('document').off("input", "#title, #url, #name, #message");
+// });
 
-checkDisabled();
+// checkDisabled();
 
-function checkInMember(option) {
-  var option = option?option:$('#bootstrap-duallistbox-selected-list_user_id\\[\\] option');
-  var flag = false;
-  option.each(function (idx,obj) {
-    if(obj.value === "834") {
-      flag = true;
-    }
-  });
-  if(flag) {
-    hideNotMemberAlert();
-  } else {
-    viewNotMemberAlert();
-  }
-}
+// function checkInMember(option) {
+//   var option = option?option:$('#bootstrap-duallistbox-selected-list_user_id\\[\\] option');
+//   var flag = false;
+//   option.each(function (idx,obj) {
+//     if(obj.value === "834") {
+//       flag = true;
+//     }
+//   });
+//   if(flag) {
+//     hideNotMemberAlert();
+//   } else {
+//     viewNotMemberAlert();
+//   }
+// }
 
-function viewNotMemberAlert() {
-  $('.not-member-alert').show();
-}
-function hideNotMemberAlert() {
-  $('.not-member-alert').hide();
-}
+// function viewNotMemberAlert() {
+//   $('.not-member-alert').show();
+// }
+// function hideNotMemberAlert() {
+//   $('.not-member-alert').hide();
+// }
 
-checkInMember();
+// checkInMember();
 
-$(document).on('turbolinks:load', function(){
-  $(document).on('keyup', '#form', function(e){
+//   $(document).on('keyup', '#form', function(e){
+//   e.preventDefault();
+//   var input = $.trim($(this).val());
+//   console.log(input)
+//   $.ajax({
+//     url: '/categories/search',
+//     type: 'GET',
+//     data: ('keyword=' + input),
+//     processData: false,
+//     contentType: false,
+//     dataType: 'json'
+//   })
+//   .done(function(data){
+//     $('.td').removeClass('.column-data');
+//     $(data).each(function(category){
+//       $('#result').append(
+//         `<td>
+//           <a class="ajax-link" href="/categories/new/${category.id}">${category.category_name}</a>
+//          </td>
+//          <td>
+//            <a class="btn btn-primary ajax-link tip" href="/categories/${category.id}/edit">
+//              <i class="fa fa-fw fa-edit"></i>
+//            </a>
+//            <a data-confirm="削除してよいですか <br> <strong>${category.category_name}</strong>" data-cancel="キャンセル" data-commit="削除" title="削除の確認"  class="btn btn-danger tip" rel="nofollow" data-method="delete"  href="/categories/${category.id}">
+//              <i class="fa fa-fw fa-trash"></i>
+//            </a>
+//          </td>`
+//       )
+//     });
+//   })
+// });
+
+$(document).on('keyup', '#form', function(e){
   e.preventDefault();
   var input = $.trim($(this).val());
   $.ajax({
@@ -129,39 +160,25 @@ $(document).on('turbolinks:load', function(){
     dataType: 'json'
   })
   .done(function(data){
-    $(data).each(function(i, category){
-      $('#result').append('<a>' + link_to category.category_name, new_category_path(category.category_name), class="ajax-link" + '</a>')
+    $('tr.column-data').remove();
+    $(data).each(function(index, category){
+      console.log(data);
+      console.log(category.id);
+      $('#result').append(
+        `<tr  class="column-data">
+          <td>
+            <a class="ajax-link" href="/categories/new.${ category.category_name}">${ category.category_name}</a>
+          </td>
+          <td>
+             <a class="btn btn-primary ajax-link tip" href="/categories/${ category.id}/edit">
+              <i class="fa fa-fw fa-edit"></i>
+            </a>
+            <a data-confirm="削除してよいですか <br> <strong>${ category.category_name}</strong>" data-cancel="キャンセル" data-commit="削除" title="削除の確認"  class="btn btn-danger tip" rel="nofollow" data-method="delete"  href="/categories/${ category.id}">
+              <i class="fa fa-fw fa-trash"></i>
+            </a>
+          </td>
+        </tr>`
+      )
     });
   })
 });
-});
-
-// $('#category-search-field').on('keyup', function(e){
-//   var input = $("#category-search-field").val();
-
-// $.ajax({
-//   type: 'GET',
-//   url: '/categories',
-//   data: { keyword: input },
-//   dataType: 'json'
-// })
-
-// .done(function(categories){
-//   if (input.length === 0) {
-//     $('#category-search-field').empty();
-//   }
-//   else if (input.length !== 0){
-//     $('#category-search-field').empty();
-//     categories.forEach(function(category){
-//       appendCategory(category)
-//     });
-//   }
-//   else {
-//     $('#category-search-field').empty();
-//     appendErrMsgToHTML("該当するカテゴリーが見つかりません");
-//   }
-// })
-// .fail(function() {
-//   alert('カテゴリー検索に失敗しました')
-// });
-// });

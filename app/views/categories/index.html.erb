@@ -67,26 +67,26 @@
                       <th class="text-ilght categries-index_text-color">処理</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody id="result">
                     <tr>
                       <td>
                         <input type="form" id="form" name="name" class="ajax-filter ajax-filter-input categories-index_namesearch">
                       </td>
                     </tr>
                     <% @categories.each do |category| %>
-                      <tr>
-                          <td id="result">
-                              <%= link_to category.category_name, new_category_path(category.category_name), class: "ajax-link" %>
-                          </td>
-                          <td>
-                              <%= link_to edit_category_path(category), class: "btn btn-primary ajax-link tip" do %>
-                                <i class="fa fa-fw fa-edit"></i>
-                              <% end %>
-                              <%= link_to category_path(category), method: :delete, data: { confirm: "削除してよいですか？ <br> <strong>#{category.category_name}</strong>", cancel: 'キャンセル', commit: '削除'}, title: '削除の確認', class: "btn btn-danger tip" do %>
-                              <i class="fa fa-fw fa-trash"></i>
-                              <% end %>
-                          </td>
-                      </tr>
+                    <tr class="column-data">
+                      <td>
+                          <%= link_to category.category_name, new_category_path(category.category_name), class: "ajax-link" %>
+                      </td>
+                      <td>
+                          <%= link_to edit_category_path(category), class: "btn btn-primary ajax-link tip" do %>
+                            <i class="fa fa-fw fa-edit"></i>
+                          <% end %>
+                          <%= link_to category_path(category), method: :delete, data: { confirm: "削除してよいですか？ <br> <strong>#{category.category_name}</strong>", cancel: 'キャンセル', commit: '削除'}, title: '削除の確認', class: "btn btn-danger tip" do %>
+                          <i class="fa fa-fw fa-trash"></i>
+                          <% end %>
+                      </td>
+                    </tr>
                     <% end %>
                   </tbody>
                 </table>
