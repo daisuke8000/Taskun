@@ -5,6 +5,7 @@ class CategoriesController < ApplicationController
 
   def new
     @category = Category.new
+    @users = User.all
   end
 
   def create

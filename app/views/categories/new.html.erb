@@ -33,9 +33,13 @@
                       すべて追加
                       </button>
                     </div>
-                    <select multiple="multiple" name="user_id[]_helper1" id="bootstrap-duallistbox-nonselected-list_user_id[]" style="height: 232px" class="categories-new_multiple"></select>
+                    <select multiple="multiple" name="user_id[]_helper1" id="bootstrap-duallistbox-nonselected-list_user_id[]"  class="categories-new_multiple">
+                    <% @users.each do |user| %>
+                      <% user.name %>
+                    <% end %>
+                    </select>
                   </div>
-                  <div class="box2 col-md-6">
+                  <div class="box2 col-md-6" id="result">
                     <label for="bootstrap-duallistbox-selected-list_user_id[]">閲覧できるメンバー</label>
                     <span class="info-container">
                     <br>
@@ -48,8 +52,10 @@
                       すべて削除
                       </button>
                     </div>
-                    <select name="user_id[]_helper2" id="bootstrap-duallistbox-selected-list_user_id[]" multiple="multiple" style="height: 232px;" class="categories-new_multiple">
-                      <option value="834" selected></option>
+                    <select name="user_id[]_helper2" id="bootstrap-duallistbox-selected-list_user_id[]" multiple="multiple" class="categories-new_multiple">
+                    <% @users.each do |user| %>
+                      <% user.name %>
+                    <% end %>
                     </select>
                   </div>
                 </div>
