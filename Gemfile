@@ -12,7 +12,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 gem 'carrierwave'
-gem 'bootstrap', '~> 4.5.0'
 gem "jquery-rails"
 gem 'font-awesome-sass', '~> 5.4.1'
 gem 'ancestry'
@@ -22,10 +21,11 @@ gem 'rspec-rails'
 gem 'devise'
 gem 'haml-rails'
 gem 'bootsnap', '>= 1.4.7', require: false
-#追加分
 gem 'bootstrap', '~> 4.5.0'
 gem 'devise-bootstrap-views'
 gem 'devise-i18n'
+gem 'pry-rails'
+gem 'data-confirm-modal'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -51,3 +51,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+

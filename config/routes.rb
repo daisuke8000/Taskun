@@ -7,5 +7,9 @@ Rails.application.routes.draw do
   get '/tasks' , to: 'tasks#show'
   get '/groups' , to: 'groups#index'
   resources :tasks, only: [:index]
-  resources :categories
+  resources :categories do
+    collection do
+      get 'search'
+    end
+  end
 end
