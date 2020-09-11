@@ -11,10 +11,12 @@ $(document).on('keyup', '#filter', function(e){
   })
   .done(function(data){
     $('select.categories-new_multiple').remove();
-    $(data).each(function(index, users){
+    $(data).each(function(index, user){
       console.log(data);
       $('#result').append(
-        `<select>`
+        `<select multiple="multiple" name="user_id[]_helper1" id="bootstrap-duallistbox-nonselected-list_user_id[]"  class="categories-new_multiple column-data">
+          <option value=""> ${user.name} </option>
+         </select>`
       )
     });
   })

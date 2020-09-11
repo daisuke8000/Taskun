@@ -1,142 +1,150 @@
 <input type="hidden" name="_token" value="#">
-                <div class="form-group">
-                  <%= form_with model: @category, local: true do |f| %>
-                    <%= f.label :category_name, "カテゴリー名", class: "control-label" %>
-                    <span class="badge badge-danger">必須</span>
-                    <%= f.text_field :category_name, class: "form-control" %>
-                </div>
-                <div class="form-group">
-                  <label for="user_id[]" class="control-label">
-                  閲覧できるメンバーを選んでください。
-                  <span class="badge badge-danger">必須</span>
-                  </label>
-                <div class="bootstrap-duallistbox-container row moveonselect">
-                  <div class="box1 col-md-6">
-                    <label for="bootstrap-duallistbox-nonselected-list_user_id[]">閲覧できないメンバー</label>
-                    <span class="info-container">
-                    <br>
-                      <span class="info">空</span>
-                      <button type="button" class="btn btn-sm clear1" style="float:right!important;">すべて表示</button>
-                    </span>
-                    <input class="form-control filter"  type="text" placeholder="フィルター">
-                    <div class="btn-group buttons categories-new_addbtn">
-                      <button type="button" class="btn moveall btn-outline-secondary" title="すべて追加">
-                      すべて追加
-                      </button>
-                    </div>
-                    <select multiple="multiple" name="user_id[]_helper1" id="bootstrap-duallistbox-nonselected-list_user_id[]"  class="categories-new_multiple">
-                    <option value=""></option>
-                    </select>
-                  </div>
-                  <div class="box2 col-md-6" id="result">
-                    <label for="bootstrap-duallistbox-selected-list_user_id[]">閲覧できるメンバー</label>
-                    <span class="info-container">
-                    <br>
-                      <span class="info">１名</span>
-                      <button type="button" class="btn btn-sm clear2" style="float:right!important;">すべて表示</button>
-                    </span>
-                    <input id="filter" type="text" class="form-control filter" placeholder="フィルター">
-                    <div class="btn-group buttons categories-new_delbtn">
-                      <button type="button" class="btn removeall btn-outline-secondary" title="すべて削除">
-                      すべて削除
-                      </button>
-                    </div>
-                    <select name="user_id[]_helper2" id="bootstrap-duallistbox-selected-list_user_id[]" multiple="multiple" class="categories-new_multiple">
-                    <option value=""></option>
-                    </select>
-                  </div>
-                </div>
-                <select name="user_id[]" id="user_id[]" class="form-control duallistbox" required multiple="multiple" size="10" style="display: none;">
-                  <option value="834" selected>
-                    <% @users.each do |user| %>
-                      <% user.name %>
-                    <% end %>
-                  </option>
+    <div class="form-group">
+      <%= form_with model: @category, local: true do |f| %>
+        <%= f.label :category_name, "カテゴリー名", class: "control-label" %>
+        <span class="badge badge-danger">必須</span>
+        <%= f.text_field :category_name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <label for="user_id[]" class="control-label">
+      閲覧できるメンバーを選んでください。
+      <span class="badge badge-danger">必須</span>
+      </label>
+    <div class="bootstrap-duallistbox-container row moveonselect">
+      <div class="box1 col-md-6" id="result">
+        <label for="bootstrap-duallistbox-nonselected-list_user_id[]">閲覧できないメンバー</label>
+        <span class="info-container">
+        <br>
+          <span class="info">空</span>
+          <button type="button" class="btn btn-sm clear1" style="float:right!important;">すべて表示</button>
+        </span>
+        <input class="form-control filter"  type="text" placeholder="フィルター">
+        <div class="btn-group buttons categories-new_addbtn">
+          <button type="button" class="btn moveall btn-outline-secondary" title="すべて追加">
+          すべて追加
+          </button>
+        </div>
+        <select multiple="multiple" name="user_id[]_helper1" id="bootstrap-duallistbox-nonselected-list_user_id[]"  class="categories-new_multiple column-data">
+        <option value="">
+          <% @users.each do |user| %>
+            <%= user.name%>
+          <% end %>
+        </option>
+        </select>
+      </div>
+      <div class="box2 col-md-6" id="result">
+        <label for="bootstrap-duallistbox-selected-list_user_id[]">閲覧できるメンバー</label>
+        <span class="info-container">
+        <br>
+          <span class="info">１名</span>
+          <button type="button" class="btn btn-sm clear2" style="float:right!important;">すべて表示</button>
+        </span>
+        <input id="filter" type="text" class="form-control filter" placeholder="フィルター">
+        <div class="btn-group buttons categories-new_delbtn">
+          <button type="button" class="btn removeall btn-outline-secondary" title="すべて削除">
+          すべて削除
+          </button>
+        </div>
+        <select name="user_id[]_helper2" id="bootstrap-duallistbox-selected-list_user_id[]" multiple="multiple" class="categories-new_multiple column-data">
+        <option value="">
+          <% @users.each do |user| %>
+            <% user.name%>
+          <% end %>
+        </option>
+        </select>
+      </div>
+    </div>
+    <select name="user_id[]" id="user_id[]" class="form-control duallistbox" required multiple="multiple" size="10" style="display: none;">
+      <option value="834" selected>
+        <% @users.each do |user| %>
+          <% user.name %>
+        <% end %>
+      </option>
+    </select>
+    </div>
+    <div style="disply: none" class="not-member-alert">
+    あなた自身が閲覧できるメンバーに含まれていません。
+    この状態で登録すると、登録後、閲覧や変更ができなくなりますのでご注意ください。
+    </div>
+    <div class="mb-4 alert alert-dark">
+      <div class="d-inline font-weight-bold">
+      マネージャー権限の設定
+      </div>
+      <div class="d-inline ml-3 mb-5">
+      （グループのメンバーのうち、特定のメンバーをマネージャーとして設定し、カテゴリーの作成・編集権限やメンバーの招待など、オーナーと同じような権限を持たすことができます。）
+        <a href="#">
+          <i class="fas fa-arrow-circle-right ml-3 mr-2"></i>
+          マネージャー権限の設定
+        </a>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="manager_editable" class="control-label">
+      マネージャが変更できるか
+      <span class="badge badge-danger">必須</span>
+      </label>
+      <select name="manager_editable" id="manager_editable" class="form-control" required>
+        <option value="1" selected>はい</option>
+        <option value="0">いいえ</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="manager_deletable" class="control-label">
+      マネージャが削除できるか
+      <span class="badge badge-danger">必須</span>
+      </label>
+      <select name="manager_deletable" id="manager_deletable" class="form-control" required>
+        <option value="1">はい</option>
+        <option value="0" selected>いいえ</option>
+      </select>
+    </div>
+    <p class="mb-3">
+      <a href="#" data-toggle="collapse" aria-expanded="false" aria-controls="project-other-options">
+      その他の設定を表示</a>
+    </p>
+    <div class="collapse multi-collapse" id="project-other-options">
+      <a href="#" class="btn btn-outline-primary mb-2">
+        <i class="fa fa-fw fa-book-open fa-lg mr-1"></i>
+        タスク情報をslackに通知する方法
+      </a>
+      <div class="form-group">
+        <label for="slack_channnel_name" class="control-label">
+        Slackのchannnel名
+        </label>
+        <input type="text" id="slack_channnel_name" class="form-control" name="slack_channel_name" value placeholder="general">
+        <small id="slack_channel_nameHelp" class="form-text text-muted">
+        「#」は不要です。</small>
+      </div>
+      <hr class="mt-2">
+      <label class="control-label">カスタムフィールド</label>
+      <div class="custom-field-lists"></div>
+      <div class="mt-2 custom-filed-add tip" data-title="アイテム追加">
+        <i class="fa fa-fw fa-plus-circle fa-lg text-secondary"></i>
+      </div>
+      <hr class="mb-4">
+      <div id="custom-field-div" style="display: none">
+        <div class="custom-filed-item mb-1">
+          <div class="custom-filed-delete" data-id="0">
+            <i class="fa fa-fw fa-trash fa-lg text-danger"></i>
+          </div>
+          <div class="custom-filed-input-div">
+            <div class="form-row">
+              <div class="form-group col-md-9">
+                <label>タイトル</label>
+                <input type="text" class="form-control custom-filed-title" name="custom-filed-title[]" value>
+                <input type="hidden" name="custom-filed-id[]" value="0">
+              </div>
+              <div class="form-group col-md-3">
+                <label>データタイプ</label>
+                <select name="custom-filed-type[]" class="form-control">
+                  <option value="1">テキスト</option>
+                  <option value="2">日付</option>
                 </select>
-                </div>
-                <div style="disply: none" class="not-member-alert">
-                あなた自身が閲覧できるメンバーに含まれていません。
-                この状態で登録すると、登録後、閲覧や変更ができなくなりますのでご注意ください。
-                </div>
-                <div class="mb-4 alert alert-dark">
-                  <div class="d-inline font-weight-bold">
-                  マネージャー権限の設定
-                  </div>
-                  <div class="d-inline ml-3 mb-5">
-                  （グループのメンバーのうち、特定のメンバーをマネージャーとして設定し、カテゴリーの作成・編集権限やメンバーの招待など、オーナーと同じような権限を持たすことができます。）
-                    <a href="#">
-                      <i class="fas fa-arrow-circle-right ml-3 mr-2"></i>
-                      マネージャー権限の設定
-                    </a>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="manager_editable" class="control-label">
-                  マネージャが変更できるか
-                  <span class="badge badge-danger">必須</span>
-                  </label>
-                  <select name="manager_editable" id="manager_editable" class="form-control" required>
-                    <option value="1" selected>はい</option>
-                    <option value="0">いいえ</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="manager_deletable" class="control-label">
-                  マネージャが削除できるか
-                  <span class="badge badge-danger">必須</span>
-                  </label>
-                  <select name="manager_deletable" id="manager_deletable" class="form-control" required>
-                    <option value="1">はい</option>
-                    <option value="0" selected>いいえ</option>
-                  </select>
-                </div>
-                <p class="mb-3">
-                  <a href="#" data-toggle="collapse" aria-expanded="false" aria-controls="project-other-options">
-                  その他の設定を表示</a>
-                </p>
-                <div class="collapse multi-collapse" id="project-other-options">
-                  <a href="#" class="btn btn-outline-primary mb-2">
-                    <i class="fa fa-fw fa-book-open fa-lg mr-1"></i>
-                    タスク情報をslackに通知する方法
-                  </a>
-                  <div class="form-group">
-                    <label for="slack_channnel_name" class="control-label">
-                    Slackのchannnel名
-                    </label>
-                    <input type="text" id="slack_channnel_name" class="form-control" name="slack_channel_name" value placeholder="general">
-                    <small id="slack_channel_nameHelp" class="form-text text-muted">
-                    「#」は不要です。</small>
-                  </div>
-                  <hr class="mt-2">
-                  <label class="control-label">カスタムフィールド</label>
-                  <div class="custom-field-lists"></div>
-                  <div class="mt-2 custom-filed-add tip" data-title="アイテム追加">
-                    <i class="fa fa-fw fa-plus-circle fa-lg text-secondary"></i>
-                  </div>
-                  <hr class="mb-4">
-                  <div id="custom-field-div" style="display: none">
-                    <div class="custom-filed-item mb-1">
-                      <div class="custom-filed-delete" data-id="0">
-                        <i class="fa fa-fw fa-trash fa-lg text-danger"></i>
-                      </div>
-                      <div class="custom-filed-input-div">
-                        <div class="form-row">
-                          <div class="form-group col-md-9">
-                            <label>タイトル</label>
-                            <input type="text" class="form-control custom-filed-title" name="custom-filed-title[]" value>
-                            <input type="hidden" name="custom-filed-id[]" value="0">
-                          </div>
-                          <div class="form-group col-md-3">
-                            <label>データタイプ</label>
-                            <select name="custom-filed-type[]" class="form-control">
-                              <option value="1">テキスト</option>
-                              <option value="2">日付</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <%= f.submit '登録', class: "btn btn-primary assignMenber" %>
-              <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= f.submit '登録', class: "btn btn-primary assignMenber" %>
+  <% end %>
