@@ -11,6 +11,7 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
+
  *
  *= require_tree .
  *= require_self
@@ -35,6 +36,7 @@
    text-align: left;
    background-color: #f8fafc;
  }
+
 
  .alert-info {
     color: #385d7a;
@@ -104,6 +106,10 @@ a {
 }
 
 
+.tasks-show_groups-show_card{
+  margin: auto;
+  margin-top: 100px ;
+}
 //homes-view
 
 .home-index_card {
@@ -153,4 +159,3 @@ a {
   text-align: center;
   padding-top: 150px;
 }
-
