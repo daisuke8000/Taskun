@@ -1,0 +1,108 @@
+<main class="py-4" id="main-content">
+  <div class="container gt-main-container">
+    <div class="row justify-content-center">
+      <div class="col-md-11 body-frame">
+        <div class="card">
+          <div class="card-header bg-primary text-white font-weight-bold">登録情報の更新</div>
+          <div class="card-body">
+            <form method="POST" class="ajax-form" id="ajaxForm">
+              <input type="hidden" name="_token">
+              <input type="hidden" name="method" valie="post">
+                <div class="form-group">
+                  <label for="title" class="control-label">タスク名
+                    <span class="badge badge-danger">必須</span>
+                  </label>
+                  <input type="text" name="title" id="title" class="form-control" value="テストタスク" required autofocus>
+                </div>
+                <div class="form-group">
+                  <label for="title" class="control-label">担当者
+                    <span class="badge badge-danger">必須</span>
+                  </label>
+                  <select name="to_user_id[]" id="to_user_id[]" class="form-control" required>
+                  <option value="" selected>ユーザー名</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="memo" class="control-label">継続的なメモ</label>
+                  <small type="text" id="memo" class="form-text text-muted">
+                  この欄の内容が更新されない限り、タスクが更新されても内容は変化しません。「40％完了」のようなメモを書くのに適しています。タスク名の後に表示されます。１２文字以内。
+                  </small>
+                </div>
+                <div class="form-group">
+                  <label for="due_date" class="control-label">期日</label>
+                  <div class="input-group">
+                    <input id="due_date" class="flatpickr-input form-contorol" name="due_date" type="text" value readonly="readonly">
+                    <div class="input-group-append flatpickr-clear-button">
+                      <span class="input-group-text">
+                        <i class="fa fa-times text-danger"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="priority" class="control-label">優先度</label>
+                  <select name="priority" id="priority" class="control-label">
+                    <option value="1">高い</option>
+                    <option value="2" selected>普通</option>
+                    <option value="3">低い</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="status" class="control-label">ステータス
+                    <span class="badge badge-danger">必須</span>
+                  </label>
+                  <select name="status" id="status" class="control-label">
+                    <option value="1" selected>進行中</option>
+                    <option value="20">終了</option>
+                    <option value="10">保留</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="start_date" class="control-label">開始日</label>
+                  <div class="input-group">
+                    <input id="start_date" class="flatpickr-input form-contorol" name="start_date" type="text" value="2020-09-13" readonly="readonly">
+                    <div class="input-group-append flatpickr-clear-button">
+                      <span class="input-group-text">
+                        <i class="fa fa-times text-danger"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <small id="start_dateHelp" class="form-text text-muted">未入力の場合は、本日の日付が設定されます。</small>
+                </div>
+                <div class="form-group">
+                  <label for="tmp_memo" class="control-label">一時的なメモ</label>
+                  <div class="input-group">
+                    <input id="tmp_memo" class="form-contorol" name="tmp_memo" type="text" value>
+                    <small id="tmp_memoHelp" class="form-text text-muted">タスクが更新されると上書きされます。「5分仕事」のようなメモを書くのに適しています。タスク名の前に表示されます。12文字以内。</small>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="is_cron" class="control-label">このタスクは繰り返し実行されますか？
+                    <span class="badge badge-danger">必須</span>
+                  </label>
+                  <select name="is_cron" id="is_cron" class="form-control" required>
+                    <option value="1">はい</option>
+                    <option value="2" selected>いいえ</option>
+                  </select>
+                  <small id="is_cronHelp" class="form-text text-muted">「はい」を選択すると、タスクが終了したときに、同じ内容のタスクが新規に作成されます。</small>
+                </div>
+                <div class="form-group">
+                  <label for="is_share" class="control-label">このカテゴリに属するメンバー共有のタスクとしますか？
+                    <span class="badge badge-danger">必須</span>
+                  </label>
+                  <select name="is_share" id="is_share" class="form-control" required>
+                    <option value="1">はい</option>
+                    <option value="0" selected>いいえ</option>
+                  </select>
+                  <small id="is_shareHelp" class="form-text text-muted">「はい」を選んだ場合、通常のタスクと違い、子タスクはカテゴリに参加するメンバーであれば作ることができるようになります。（メールやSlackなどの通知は行われません。）また、参加メンバーのダッシュボードに常時表示されるようになります。</small>
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary">登録</button>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
