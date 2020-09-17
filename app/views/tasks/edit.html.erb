@@ -8,22 +8,20 @@
             <form method="POST" class="ajax-form" id="ajaxForm">
               <input type="hidden" name="_token">
               <input type="hidden" name="method" valie="post">
+              <%= form_with model: @tasks, local: true do |f| %>
                 <div class="form-group">
-                  <label for="title" class="control-label">タスク名
-                    <span class="badge badge-danger">必須</span>
-                  </label>
-                  <input type="text" name="title" id="title" class="form-control" value="テストタスク" required autofocus>
+                  <%= f.label :task_name, "タスク名", class: "control-label" %>
+                  <span class="badge badge-danger">必須</span>
+                  <%= f.text_field :task_name, class: "form-control" %>
                 </div>
                 <div class="form-group">
-                  <label for="title" class="control-label">担当者
-                    <span class="badge badge-danger">必須</span>
-                  </label>
-                  <select name="to_user_id[]" id="to_user_id[]" class="form-control" required>
-                  <option value="" selected>ユーザー名</option>
-                  </select>
+                  <%= f.label :users_name, "担当者", class: "control-label" %>
+                  <span class="badge badge-danger">必須</span>
+                  <%= f.text_field :task, class: "form-control" %>
                 </div>
                 <div class="form-group">
                   <label for="memo" class="control-label">継続的なメモ</label>
+                  <input id="memo" type="text" class="form-control">
                   <small type="text" id="memo" class="form-text text-muted">
                   この欄の内容が更新されない限り、タスクが更新されても内容は変化しません。「40％完了」のようなメモを書くのに適しています。タスク名の後に表示されます。１２文字以内。
                   </small>
@@ -41,7 +39,7 @@
                 </div>
                 <div class="form-group">
                   <label for="priority" class="control-label">優先度</label>
-                  <select name="priority" id="priority" class="control-label">
+                  <select name="priority" id="priority" class="form-control">
                     <option value="1">高い</option>
                     <option value="2" selected>普通</option>
                     <option value="3">低い</option>
@@ -51,7 +49,7 @@
                   <label for="status" class="control-label">ステータス
                     <span class="badge badge-danger">必須</span>
                   </label>
-                  <select name="status" id="status" class="control-label">
+                  <select name="status" id="status" class="form-control">
                     <option value="1" selected>進行中</option>
                     <option value="20">終了</option>
                     <option value="10">保留</option>
@@ -97,6 +95,7 @@
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary">登録</button>
                 </div>
+              <% end %>
             </form>
           </div>
         </div>

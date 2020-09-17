@@ -18,7 +18,15 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = Task.find(params[:id])
+    @tasks = Task.find(params[:id])
+  end
+
+  def update
+    @task = Task.find(task_params)
+  end
+
+  def task_params
+    params.require(:task).permit(:task_name, :users.name, :cont_memo)
   end
 
 end
