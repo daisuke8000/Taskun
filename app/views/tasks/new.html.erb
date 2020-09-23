@@ -21,7 +21,7 @@
           <div class="form-group">
             <%= f.label "担当者", class: 'control-label' %>
             <span class="badge badge-danger">必須</span><br />
-            <%= f.collection_select :users_id, User.all, :id, :name, {prompt: '選択してください'}, {class: 'form-control'} %>
+            <%= f.collection_select :task_users_id, User.all, :id, :name, {prompt: '選択してください'}, {class: 'form-control'} %>
             <small>複数のメンバーを選択するには「Ctrl」を押しながらメンバーを選択して下さい。</small>
           </div>
 
