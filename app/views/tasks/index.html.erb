@@ -1,3 +1,5 @@
+<%= javascript_include_tag('task.js') %>
+
 <main  class="py-4" id="main-content">
   <div class="container gt-main-container">
     <div class="row justify-content-center">
@@ -85,26 +87,26 @@
                   </tr>
                 </thead>
 
-                <tbody>
+                <tbody id="result">
                 <tr>
                   <td>
-                    <input type="text" value name="title" data-url="#" class="w-100 h-100 ajax-filter ajax-filter-input">
+                    <input id="search" type="form" name="title" class="w-100 h-100 ajax-filter ajax-filter-input">
                   </td>
                   <td>
-                    <select class="w-100 h-100 ajax-filter ajax-filter-select" name="to_user_id" data-url="#" >
+                    <select class="w-100 h-100 ajax-filter ajax-filter-select" name="to_user_id" >
                       <option value selected>--</option>
                       <option value="#"></option>
                     </select>
                   </td>
                   <td>
-                    <input type="text" value name="due_date" data-url="#" class="w-100 h-100 ajax-filter ajax-filter-input" id="IdDueDate" >
+                    <input type="form" value name="due_date" class="w-100 h-100 ajax-filter ajax-filter-input" >
                   </td>
                 </tr>
-                <%= @tasks.each do |task| %>
-                  <tr>
+                <% @tasks.each do |task| %>
+                  <tr class="tasks_column-data">
                     <td>
                       <div class="td-border-div mytask-priority-5">
-                        <%= link_to task.task_name, tasks_show_path(task.task_name) %>
+                        <%= link_to task.task_name, task_path(task.task_name) %>
                       </div>
                     </td>
                     <td>
@@ -112,7 +114,9 @@
                       <span class="plofile-name-cover">sample name</span>
                     </td>
                     <td>
-                      <% task.created_at %> に開始
+                      <div class="sub-project-name">
+                        <%= task.created_at.strftime('%Y-%m-%d') %>に開始
+                      </div>
                     </td>
                     <td class="text-nowrap">
                       <%= link_to edit_task_path(task), class: "btn btn-primary ajax-link tip" do %>

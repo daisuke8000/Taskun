@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  get 'tasks/new' => 'tasks#new'
   devise_for :users,controllers: { registrations: 'registrations' }
   root 'homes#index'
-  get 'users/member' => 'users#member'
-  resources :users
-  get '/tasks' , to: 'tasks#show'
   get '/groups' , to: 'groups#index'
-  resources :tasks, only: [:index]
+  # get 'tasks/new', to: 'tasks#new'
+  # get 'tasks/show' , to: 'tasks#show'
+  get 'users/member', to: 'users#member'
+  resources :tasks
+  resources :users
   resources :categories do
     collection do
       get 'search'

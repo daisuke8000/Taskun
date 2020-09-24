@@ -4,9 +4,6 @@ class TasksController < ApplicationController
     @tasks = Task.all
   end
 
-  def show
-  end
-
   def new
     @task = Task.new
   end
@@ -25,8 +22,19 @@ class TasksController < ApplicationController
     @task = Task.find(task_params)
   end
 
+  def search
+    @tasks = Task.where("task_name LIKE ?", "%#{params[:keyword]}%")
+    respond_to do |format|
+      format.html
+      format.json {
+        render json: @tasks
+      }
+    end
+  end
+
+  private
   def task_params
-    params.require(:task).permit(:task_name, :users.name, :cont_memo)
+    params.require(:task).permit(:task_name, :cont_memo)
   end
 
 end
