@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   # get 'tasks/new', to: 'tasks#new'
   # get 'tasks/show' , to: 'tasks#show'
   get 'users/member', to: 'users#member'
-  resources :tasks
+  resources :tasks do
+    collection do
+      get 'search'
+    end
+  end
   resources :users
   resources :categories do
     collection do
