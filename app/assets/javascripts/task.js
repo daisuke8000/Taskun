@@ -14,8 +14,8 @@ $(document).on('keyup', '#search', function(e){
   .done(function(data){
     $('tr.tasks_column-data').remove();
     $(data).each(function(index, task){
-      console.log(data)
-      $('#result').append(
+      console.log(task)
+    $('#result').append(
         `<tr class="tasks_column-data">
           <td>
             <div class="td-border-div mytask-priority-5">
@@ -28,11 +28,11 @@ $(document).on('keyup', '#search', function(e){
           </td>
           <td>
             <div class="sub-project-name">
-              <p>${task.created_at}に開始</p>
+              <p>${ task.created_at.slice(0,10) }に開始</p>
             </div>
           </td>
           <td class="text-nowrap">
-            <a class="btn btn-primary ajax-link tip" href="/tasks/${task}/edit">
+            <a class="btn btn-primary ajax-link tip" href="/tasks/${task.id}/edit">
               <i class="fa fa-fw fa-edit"></i>
             </a>
             <a data-confirm="削除してよいですか <br> <strong>${ task.task_name }</strong>" data-cancel="キャンセル" data-commit="削除" title="削除の確認"  class="btn btn-danger tip" rel="nofollow" data-method="delete"  href="/tasks/${ task.task_users_id}">

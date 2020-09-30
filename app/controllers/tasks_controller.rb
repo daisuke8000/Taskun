@@ -8,18 +8,24 @@ class TasksController < ApplicationController
     @task = Task.new
   end
 
-  def destory
+  def destroy
     @task = Task.find(params[:id])
     @task.destroy
     redirect_to tasks_path
   end
 
   def edit
-    @tasks = Task.find(params[:id])
+    @task = Task.find(params[:id])
+  end
+
+  def create
   end
 
   def update
-    @task = Task.find(task_params)
+    @task = Task.find(params[:id])
+    if @task.update(task_params)
+      redirect_to tasks_path
+    end
   end
 
   def search
@@ -34,7 +40,7 @@ class TasksController < ApplicationController
 
   private
   def task_params
-    params.require(:task).permit(:task_name, :cont_memo)
+    params.require(:task).permit(:task_users_id, :task_name, :temp_memo, :end_date, :priority, :status, :start_date, :cont_memo, :is_cron, :is_share, :message)
   end
 
 end
