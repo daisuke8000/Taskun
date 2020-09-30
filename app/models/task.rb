@@ -1,5 +1,5 @@
 class Task < ApplicationRecord
-  has_many :Users, through: :Task_users
-  accepts_nested_attributes_for :Task_users
   has_many :task_users
+  has_many :User, through: :Task_users
+  belongs_to :category, optional: true
 end
