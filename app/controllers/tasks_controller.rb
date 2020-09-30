@@ -8,6 +8,10 @@ class TasksController < ApplicationController
     @task = Task.new
   end
 
+  def show
+    @tasks = Task.where(id: params[:id])
+  end
+
   def destroy
     @task = Task.find(params[:id])
     @task.destroy

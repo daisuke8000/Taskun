@@ -1,17 +1,18 @@
 <div class="card w-75 tasks-show_groups-show_card">
   <!-- Card Header -->
-
-  <div class="card-header bg-primary text-white">
-      デフォルトカテゴリー
+  <% @tasks.each do |task| %>
+  <div class="card-header bg-primary task-show_taskname">
+   <%= task.task_name %>
   </div>
-
 
   <div class="card-body">
     <div class="text-right text-black-50">
       最終更新日: 2020-05-31 07:14:28 [ 1ヶ月前 ]
     </div>
     <div>
-      <h4 class="font-weight-bold">(お読みください)仕事の見える化機能について</h4>
+      <h4 class="font-weight-bold">
+        <%= task.task_name %>
+      </h4>
       <div class="d-sm-block">
         <span class="text-black-50 mr-2">優先度</span>
         <span class="m-1 px-3 border tasks-show_priority rounded text-white">高い</span>
@@ -78,4 +79,5 @@
           </div>
       </div>
   </div>
+  <% end %>
 </div>
