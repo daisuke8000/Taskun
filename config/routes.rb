@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :users
   get '/tasks' , to: 'tasks#show'
   get '/groups' , to: 'groups#index'
-  resources :tasks, only: [:index]
+  resources :tasks
   resources :categories
 end
