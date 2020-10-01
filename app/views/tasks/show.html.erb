@@ -34,7 +34,9 @@
             <input type="text" class="form-control check-list-item-input">
           </div>
           <div>
-            <button class="btn btn-primary" ><i class="fab fa-fw fa-telegram-plane"></i></button>
+            <button class="btn btn-primary" >
+              <i class="fab fa-fw fa-telegram-plane"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -70,11 +72,7 @@
           </div>
           <div class="ticket-body">
             <div class="ticket-message mb-3"><div>
-
-            <div>「仕事の見える化機能」について説明します。</div>
-            <div>読み終わりましたら、このタスクを終了してください。</div>
-            <div>(終了の仕方)この下の「更新」ボタンを押してください。</div>
-            <div>フォームが表示されるので「ステータス」を「終了」に変更して、その下の「更新」ボタンを押してください。</div>
+               <%= task.message %>
 
             <div class="ticket-buttons mb-2">
               <button class="btn btn-a btn-primary "  >引用して更新</button>
