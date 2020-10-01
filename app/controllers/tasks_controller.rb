@@ -10,6 +10,7 @@ class TasksController < ApplicationController
 
   def show
     @tasks = Task.where(id: params[:id])
+    @users = User.where(id: params[:id])
   end
 
   def destroy

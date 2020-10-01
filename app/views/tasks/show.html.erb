@@ -1,13 +1,15 @@
 <div class="card w-75 tasks-show_groups-show_card">
   <!-- Card Header -->
   <% @tasks.each do |task| %>
+  <% @users.each do |user| %>
   <div class="card-header bg-primary task-show_taskname">
    <%= task.task_name %>
   </div>
 
   <div class="card-body">
     <div class="text-right text-black-50">
-      最終更新日: 2020-05-31 07:14:28 [ 1ヶ月前 ]
+      <%= task.updated_at.strftime('%Y-%m-%d %H:%M:%S') %>
+      <%= time_ago_in_words(task.updated_at) %>前
     </div>
     <div>
       <h4 class="font-weight-bold">
@@ -15,9 +17,9 @@
       </h4>
       <div class="d-sm-block">
         <span class="text-black-50 mr-2">優先度</span>
-        <span class="m-1 px-3 border tasks-show_priority rounded text-white">高い</span>
+        <span class="m-1 px-3 border tasks-show_priority rounded text-white"><% task.priority %></span>
         <span class="text-black-50 mr-2">ステータス</span>
-        <span class="m-1 px-3 border tasks-show_status rounded text-white">進行中</span>
+        <span class="m-1 px-3 border tasks-show_status rounded text-white"><% task.status %></span>
       </div>
 
       <div class="mt-4">
@@ -37,12 +39,13 @@
         </div>
       </div>
       <div class="d-flex flex-row-reverse">
-        <a href="#" class="btn btn-primary text-white tasks-show_btn" data-title="詳細を表示する"><i class="fa fa-fw fa-edit"></i></a>
+        <%= link_to edit_task_path(task), class: "btn btn-primary text-white tasks-show_btn", datatitle: "詳細を表示する" do %>
+          <i class="fa fa-fw fa-edit"></i>
+        <% end %>
         <a href="#" class="btn btn-primary text-white tasks-show_btn" data-title="詳細を表示する"><i class="fa fa-fw fa-child"></i></a>
         <a href="#" class="btn btn-primary text-white tasks-show_btn" data-title="詳細を表示する"><i class="fa fa-fw fa-arrow-down"></i></a>
         <a href="#" class="btn btn-primary text-white tasks-show_btn" data-title="詳細を表示する"><i class="fa fa-fw fa-info"></i></a>
       </div>
-    
     </div>
 
     <hr>
@@ -50,18 +53,19 @@
       <div>
         <a href="" id="showAll" class="float-right" data-open-text="すべて開く" data-close-text="すべて閉じる">すべて開く</a>
         <h5>履歴</h5>
-        
           <div class="ticket-head mb-1">
               <div>
                 <span class="font-weight-bold">
                   <img src="https://grouptask.biz/profile/image/831" class="profile-icon ml-1 mr-1"  width="30" height="30">
-                  <span class="profile-name-cover">こてつ</span>
-                </span> 
-                さんが 
+                  <span class="profile-name-cover"><%= user.name %></span>
+                </span>
+                さんが
                 <span class="font-weight-bold">
                   <img src="https://grouptask.biz/profile/image/831" class="profile-icon ml-1 mr-1"  width="30" height="30">
-                  <span class="profile-name-cover">こてつ</span>
-                </span> さんに依頼                        [ 1ヶ月前 2020-05-31 07:14:28 ]
+                  <span class="profile-name-cover"><%= user.name %></span>
+                </span> さんに依頼
+                  [ <%= time_ago_in_words(task.updated_at) %> 
+                  <%= task.updated_at.strftime('%Y-%m-%d %H:%M:%S') %> ]
               </div>
           </div>
           <div class="ticket-body">
@@ -79,5 +83,6 @@
           </div>
       </div>
   </div>
+  <% end %>
   <% end %>
 </div>
