@@ -45,3 +45,8 @@ $(document).on('keyup', '#search', function(e){
     });
   })
 });
+
+$(document).on("click", "#other-form", function(e){
+  $(".hidden-btn").on("click")
+    $(".hidden-form").toggle();
+});

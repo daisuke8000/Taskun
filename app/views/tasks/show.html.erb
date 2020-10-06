@@ -66,19 +66,21 @@
                   <img src="https://grouptask.biz/profile/image/831" class="profile-icon ml-1 mr-1"  width="30" height="30">
                   <span class="profile-name-cover"><%= user.name %></span>
                 </span> さんに依頼
-                  [ <%= time_ago_in_words(task.updated_at) %> 
+                  [ <%= time_ago_in_words(task.updated_at) %>
                   <%= task.updated_at.strftime('%Y-%m-%d %H:%M:%S') %> ]
               </div>
           </div>
           <div class="ticket-body">
-            <div class="ticket-message mb-3"><div>
-               <%= task.message %>
-
-            <div class="ticket-buttons mb-2">
-              <button class="btn btn-a btn-primary "  >引用して更新</button>
-              <button class="btn btn-b btn-primary ticket-update" data-to-user="831" data-citation="no">更新</button>
+            <div class="ticket-message mb-3 pb-50px">
+              <%= task.message %>
             </div>
           </div>
+          <div class="ticket-buttons mb-2">
+            <button class="btn btn-a btn-primary "  >引用して更新</button>
+            <button class="btn btn-b btn-primary ticket-update" data-to-user="831" data-citation="no">更新</button>
+          </div>
+          <h5>更新</h5>
+          <%= render "tasks_edit_form" %>
       </div>
   </div>
   <% end %>

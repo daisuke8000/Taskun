@@ -10,6 +10,7 @@ class TasksController < ApplicationController
 
   def show
     @tasks = Task.where(id: params[:id])
+    @task = Task.find(params[:id])
     @users = User.where(id: params[:id])
   end
 
@@ -23,13 +24,12 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
   end
 
-  def create
-  end
-
   def update
     @task = Task.find(params[:id])
     if @task.update(task_params)
-      redirect_to tasks_path
+        redirect_to tasks_path
+      else
+        render :edit
     end
   end
 
