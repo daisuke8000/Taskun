@@ -1,3 +1,5 @@
+<%= javascript_include_tag('task.js') %>
+
 <main  class="py-4" id="main-content">
   <div class="container gt-main-container">
     <div class="row justify-content-center">
@@ -53,7 +55,7 @@
                 <select class="ajax-filtter ajax-filter-select" name="display_before_start" data-url="#">
                   <option value="1">はい</option>
                   <option value="0" selected>いいえ</option>
-                </select>  
+                </select>
               </div>
             </div>
             <div class="row mb-1">
@@ -64,7 +66,7 @@
                   <option value="0" selected>いいえ</option>
                 </select>
               </div>
-            </div>  
+            </div>
 
 
             <div class="table-responsive mt-3">
@@ -82,86 +84,58 @@
                       <i class="fa fa-fw fa-angle-down text-light"></i>
                     </th>
                     <th class="text-light">処理</th>
-                  </tr> 
+                  </tr>
                 </thead>
-              
-                <tbody>
+
+                <tbody id="result">
                 <tr>
                   <td>
-                    <input type="text" value name="title" data-url="#" class="w-100 h-100 ajax-filter ajax-filter-input">
+                    <input id="search" type="form" name="title" class="w-100 h-100 ajax-filter ajax-filter-input">
                   </td>
                   <td>
-                    <select class="w-100 h-100 ajax-filter ajax-filter-select" name="to_user_id" data-url="#" >
+                    <select class="w-100 h-100 ajax-filter ajax-filter-select" name="to_user_id" >
                       <option value selected>--</option>
                       <option value="#"></option>
-                    </select>  
+                    </select>
                   </td>
                   <td>
-                    <input type="text" value name="due_date" data-url="#"class="w-100 h-100 ajax-filter ajax-filter-input" id="IdDueDate" >
+                    <input type="form" value name="due_date" class="w-100 h-100 ajax-filter ajax-filter-input" >
                   </td>
-                  <td> </td>  
                 </tr>
-                <tr>
-                  <td>
-                    <div class="td-border-div mytask-priority-5">
-                      <a href="#"></a>
-                      <div class="sub-project-name">デフォルトカテゴリー</div>
-                    </div>
-                  </td>
-                  <td>
-                    <img src="#" class="plofile-icon ml-1 mr-1">
-                    <span class="plofile-name-cover">sample name</span>
-                  </td>
-                  <td>
-                    "test"
-                    <div class="sub-project-name">test</div>
-                  </td>
-                  <td class="text-nowrap">  
-                    <a href="#" class="btn btn-primary ajax-link tip-right" date-title="登録情報の更新">
-                    <i class="fa fa-fw fa-edit"></i>
-                    </a>
-                    <button type="button" class="btn btn-danger tip" data-toggle="modal" data-target="#modal-delete-thread-4640" data-title="削除">
-                      <i class="fa fa-fw fa-trash"></i>
-                    </button>
-                    <div class="modal fade" id="modal-delete-thread-4640" tabeindex="-1" role="dialog" aria-labelledby="modal-delete-thread-4640-label" aria-hidden="true">
-                      <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title"id="modal-delete-thread-4640-label">削除の確認</h5>
-                            <button type="button" class="close"data-dismiss="modal" aria-label="close">
-                            <span aria-hidden="true">×</span>
-                            </button>
-                          </div>
-                          <div class="modal-body">
-                            <p>削除してよいですか？</p>
-                            <p>
-                              <strong>テスト</strong>
-                            </p>  
-                          </div>
-                          <div class="modal-fotter">
-                            <button type="button" class="btn btn-secondary"data-dismiss="modal">
-                            キャンセル
-                            </button>
-                            <form action="#" method="post" class="ajax-delete-form" id=modal-deleate-thread-4642>
-                            <input type="hidden" name="_token" value="#">
-                            <input type="hidden" name="_method" value="DELETE">
-                            <button type="submit" class="btn btn-danger modal-delete-button" data-target="#modal-delete-thread-4642">削除</button>
-                            </form>  
-                          </div>  
-                        </div>
+                <% @tasks.each do |task| %>
+                  <tr class="tasks_column-data">
+                    <td>
+                      <div class="td-border-div mytask-priority-5">
+                        <%= link_to task.task_name, task_path(task.task_users_id) %>
                       </div>
-                   </div>  
-                    <a href="#" class="btn btn-primary ajax-link tip-right" data-title="記録">記録</a>
-                  </td> 
-                </tr>  
-
+                    </td>
+                    <td>
+                      <img src="#" class="plofile-icon ml-1 mr-1">
+                      <span class="plofile-name-cover">sample name</span>
+                    </td>
+                    <td>
+                      <div class="sub-project-name">
+                        <%= l task.created_at %>に開始
+                      </div>
+                    </td>
+                    <td class="text-nowrap">
+                      <%= link_to edit_task_path(task), class: "btn btn-primary ajax-link tip" do %>
+                        <i class="fa fa-fw fa-edit"></i>
+                      <% end %>
+                      <%= link_to task_path(task), method: :delete, data: { confirm: "削除してよいですか？ <br> <strong>#{task.task_name}</strong>", cancel: 'キャンセル', commit: '削除'}, title: '削除の確認', class: "btn btn-danger tip" do %>
+                      <i class="fa fa-fw fa-trash"></i>
+                      <% end %>
+                      <a href="#" class="btn btn-primary ajax-link tip-right" data-title="記録">記録</a>
+                    </td>
+                  </tr>
+                <% end %>
                 </tbody>
-              </table>  
+              </table>
             </div>
          </div>
         </div>
       </div>
-    </div>    
+    </div>
 
 
 

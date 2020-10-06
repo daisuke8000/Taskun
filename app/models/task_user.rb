@@ -1,5 +1,5 @@
 class TaskUser < ApplicationRecord
-  belongs_to :user
-  belongs_to :task
+  belongs_to :users
+  belongs_to :tasks
   has_many :tasks
 end

@@ -1,3 +1,5 @@
+<%= javascript_include_tag('category.js') %>
+
 <main class="py-4" id="main-content">
   <div class="container gt-main-container">
     <div class="row justify-content-center">
@@ -22,9 +24,9 @@
               </div>
               <div class="col-12 col-md-5 col-lg-4 border-left border-primary">
                 <div class="mb-2">
-                  <a href="#" class="btn btn-primary ajax-link tip" data-title="新規作成">カテゴリーを新規作成する</a>
+                  <%= link_to "カテゴリーを新規作成する", new_category_path, class: "btn btn-primary ajax-link tip" %>
                 </div>
-                <div class="mb-2">
+                <div class="mb-2">  <%# ここはあとで追加%>
                   <a href="#" class="btn btn-outline-primary" target="guide">
                   <i class="fa fa-fw fa-book-open fa-lg mr-1"></i>
                   メンバーのアサインの仕方
@@ -37,7 +39,7 @@
                   <div class="col-md-3">ステータス</div>
                   <div class="col-md-auto">
                     <select name="status" class="ajax-filter ajax-filter-select" data-url="#">
-                      <option value="1" selected>進行中</option>
+                      <option value="1" selected>進行中</option> <%# フィルタリング %>
                       <option value="2">終了</option>
                     </select>
                   </div>
@@ -65,59 +67,27 @@
                       <th class="text-ilght categries-index_text-color">処理</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody id="result">
                     <tr>
                       <td>
-                        <input type="text" name="name" class="ajax-filter ajax-filter-input" data-url="#">
-                      </td>
-                      <td> </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <a href="#" class="ajax-link">デフォルトカテゴリー</a>
-                      </td>
-                      <td>
-                        <a href="#" class="btn btn-primary ajax-link tip" data-title="登録情報の更新">
-                        <i class="fa fa-fw fa-edit">
-                        </i>
-                        </a>
-                        <button type="button" class="btn btn-danger tip" data-toggle="modle" data-target="#modal-delete-projects-1144" data-title="削除">
-                          <i class="fa fa-fw fa-trash">
-                          </i>
-                        </button>
-                        <div class="modal fade" id="modal-delete-projects-1144" tabindex="-1" role="dialog" aria-labelledby="modal-delete-projects-1144-label" aria-hidden="true">
-                          <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title" id="modal-delete-projects-1144-label">
-                                削除の確認</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">×</span>
-                                </button>
-                              </div>
-                              <div class="modal-body">
-                                <p>削除してよいですか？</p>
-                                <p>
-                                <strong>デフォルトカテゴリー</strong>
-                                </p>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                                キャンセル
-                                </button>
-                                <form action="#" method="post" class="ajax-delete-form" id="ajaxFormmodal-delete-projects-1144" data-modal-id="modal-dalete-projects-1144">
-                                  <input type="hidden" name="_token" value="#">
-                                  <input type="hidden" name="_method" value="DELETE">
-                                  <button type="submit" class="btn btn-dangermodal-delete-button" data-target="#modal-delete-projects-1144">
-                                  削除
-                                  </button>
-                                </form>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                        <input type="form" id="form" name="name" class="ajax-filter ajax-filter-input categories-index_namesearch">
                       </td>
                     </tr>
+                    <% @categories.each do |category| %>
+                      <tr class="column-data">
+                        <td>
+                            <%= link_to category.category_name, new_category_path(category.category_name) %>
+                        </td>
+                        <td>
+                            <%= link_to edit_category_path(category), class: "btn btn-primary ajax-link tip" do %>
+                              <i class="fa fa-fw fa-edit"></i>
+                            <% end %>
+                            <%= link_to category_path(category), method: :delete, data: { confirm: "削除してよいですか？ <br> <strong>#{category.category_name}</strong>", cancel: 'キャンセル', commit: '削除'}, title: '削除の確認', class: "btn btn-danger tip" do %>
+                            <i class="fa fa-fw fa-trash"></i>
+                            <% end %>
+                        </td>
+                      </tr>
+                    <% end %>
                   </tbody>
                 </table>
               </div>
